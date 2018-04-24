@@ -1,0 +1,6 @@
+http://purl.obolibrary.org/obo/NCIT_C18102
+http://purl.obolibrary.org/obo/NCIT_C25360
+http://purl.obolibrary.org/obo/NCIT_C14250
+http://purl.obolibrary.org/obo/NCIT_C120538
+http://purl.obolibrary.org/obo/NCIT_C62195
+http://purl.obolibrary.org/obo/NCIT_C96144

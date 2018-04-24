@@ -1,0 +1,2 @@
+http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000187
+http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000200
