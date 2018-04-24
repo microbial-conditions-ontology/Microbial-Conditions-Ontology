@@ -21,7 +21,7 @@ env:
   - _JAVA_OPTIONS="-Xmx3G
 
 # command to run tests
-script: cd src/ontology && travis_wait 30 make test
+script: cd src/ontology && travis_wait 120 make test
 
 #after_success:
 #  coveralls
