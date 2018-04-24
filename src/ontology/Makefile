@@ -69,9 +69,9 @@ imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt imports/clo_upper_t
 	$(ROBOT) extract -i $< --method MIREOT -U imports/clo_upper_terms.txt -L imports/clo_terms.txt -O $(BASE)/$@ -o $@
 .PRECIOUS: imports/cl_import.owl
 
-imports/efo_import.owl: mirror/efo.owl imports/efo_terms.txt imports/efo_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/efo_upper_terms.txt -L imports/efo_terms.txt -O $(BASE)/$@ -o $@
-.PRECIOUS: imports/efo_import.owl
+# imports/efo_import.owl: mirror/efo.owl imports/efo_terms.txt imports/efo_upper_terms.txt
+# 	$(ROBOT) extract -i $< --method MIREOT -U imports/efo_upper_terms.txt -L imports/efo_terms.txt -O $(BASE)/$@ -o $@
+# .PRECIOUS: imports/efo_import.owl
 
 imports/peco_import.owl: mirror/peco.owl imports/peco_terms.txt imports/peco_upper_terms.txt
 	$(ROBOT) extract -i $< --method MIREOT -U imports/peco_upper_terms.txt -L imports/peco_terms.txt -O $(BASE)/$@ -o $@
