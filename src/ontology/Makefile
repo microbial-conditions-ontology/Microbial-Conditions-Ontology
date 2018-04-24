@@ -81,9 +81,9 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms.txt imports/ncit_upp
 	$(ROBOT)  extract -i $< --method MIREOT -U imports/ncit_upper_terms.txt -L imports/ncit_terms.txt -O $(BASE)/$@ -o $@
 .PRECIOUS: imports/ncit_import.owl
 
-imports/npo_import.owl: mirror/npo.owl imports/npo_terms.txt imports/npo_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/npo_upper_terms.txt -L imports/npo_terms.txt -O $(BASE)/$@ -o $@
-.PRECIOUS: imports/npo_import.owl
+# imports/npo_import.owl: mirror/npo.owl imports/npo_terms.txt imports/npo_upper_terms.txt
+# 	$(ROBOT) extract -i $< --method MIREOT -U imports/npo_upper_terms.txt -L imports/npo_terms.txt -O $(BASE)/$@ -o $@
+# .PRECIOUS: imports/npo_import.owl
 
 imports/obi_import.owl: mirror/obi.owl imports/obi_terms.txt imports/obi_upper_terms.txt
 	$(ROBOT) extract -i $< --method MIREOT -U imports/obi_upper_terms.txt -L imports/obi_terms.txt -O $(BASE)/$@ -o $@
