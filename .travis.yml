@@ -18,7 +18,7 @@ before_script:
   
 env:
   global:
-  - _JAVA_OPTIONS="-Xmx4G
+  - _JAVA_OPTIONS=-Xmx4G
 
 # command to run tests
 script: cd src/ontology && travis_wait 120 make test
