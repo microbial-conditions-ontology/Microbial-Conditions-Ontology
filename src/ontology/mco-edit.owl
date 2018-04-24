@@ -1,0 +1,28 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://purl.obolibrary.org/obo/mco.owl>
+Import(<http://purl.obolibrary.org/obo/mco/imports/bfo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/chebi_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/cl_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/clo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/efo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/peco_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/ncit_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/npo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/obi_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/omit_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/omp_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/pato_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/sio_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/uberon_import.owl>)
+Import(<http://purl.obolibrary.org/obo/mco/imports/zeco_import.owl>)
+Annotation(rdfs:comment "Microbial Conditions Ontology")
+
+Declaration(Class(<http://purl.obolibrary.org/obo/MCO_00000000>))
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MCO_00000000> "mco"@en)
+)
