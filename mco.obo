@@ -1,0 +1,25 @@
+format-version: 1.2
+data-version: releases/2018-04-23
+remark: Microbial Conditions Ontology
+import: http://purl.obolibrary.org/obo/mco/imports/bfo_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/chebi_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/cl_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/clo_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/efo_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/ncit_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/npo_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/obi_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/omit_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/omp_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/pato_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/peco_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/sio_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/uberon_import.owl
+import: http://purl.obolibrary.org/obo/mco/imports/zeco_import.owl
+ontology: mco
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/MCO_00000000>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/MCO_00000000> (mco)\n\nSubClassOf(<http://purl.obolibrary.org/obo/MCO_00000000> owl:Thing)\n\n\n)
+
+[Term]
+id: MCO:00000000
+name: mco
+
