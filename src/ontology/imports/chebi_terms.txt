@@ -964,3 +964,4 @@ http://purl.obolibrary.org/obo/CHEBI_32650
 http://purl.obolibrary.org/obo/CHEBI_32651
 http://purl.obolibrary.org/obo/CHEBI_28159
 http://purl.obolibrary.org/obo/CHEBI_58048
+http://purl.obolibrary.org/obo/CHEBI_52211
