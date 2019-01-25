@@ -1,0 +1,8 @@
+http://purl.obolibrary.org/obo/MICRO_0000182
+http://purl.obolibrary.org/obo/MICRO_0000184
+http://purl.obolibrary.org/obo/MICRO_0000201
+http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316
+http://purl.obolibrary.org/obo/MICRO_0000562
+http://purl.obolibrary.org/obo/MICRO_0000558
+http://purl.obolibrary.org/obo/MICRO_0001531
+http://purl.obolibrary.org/obo/MICRO_0001528
