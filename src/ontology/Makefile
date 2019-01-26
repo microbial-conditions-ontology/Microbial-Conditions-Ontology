@@ -45,13 +45,17 @@ $(ONT).obo: $(ONT).owl
 # These live in the imports/ folder
 # These can be regenerated with make all_imports
 
-IMPORTS = bfo chebi cl clo efo peco ncit npo obi omit omp pato sio uberon zeco micro
+IMPORTS = bfo chebi cl clo efo peco ncit npo obi omit omp pato sio uberon zeco micro ncbitaxon
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
 all_imports: $(IMPORTS_OWL)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
+
+imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt imports/ncbitaxon_upper_terms.txt
+	$(ROBOT) extract -i $< --method MIREOT -U imports/ncbitaxon_upper_terms.txt -L imports/ncbitaxon_terms.txt -O $(BASE)/$@ -o $@
+.PRECIOUS: imports/ncbitaxon_import.owl
 
 imports/micro_import.owl: mirror/MicrO_merged_and_fixed.owl imports/micro_terms.txt
 	$(ROBOT) extract -i $< --method MIREOT -L imports/micro_terms.txt -O $(BASE)/$@ -o $@
