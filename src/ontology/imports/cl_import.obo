@@ -1,3 +1,10 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2018-07-07
+ontology: cl
+
+[Term]
+id: CL:0000066
+name: epithelial cell
+def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:A11.436]
+synonym: "epitheliocyte" EXACT []
 

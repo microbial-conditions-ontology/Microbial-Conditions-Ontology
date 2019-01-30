@@ -1,3 +1,100 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2019-01-07
+ontology: omp
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/OMP_0000000>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/OMP_0000000> (microbial phenotype)\n\nSubClassOf(<http://purl.obolibrary.org/obo/OMP_0000000> owl:Thing)\n\n\n)
+
+[Term]
+id: OMP:0000000
+name: microbial phenotype
+def: "The observable manifestation of the genotype of a microbial cell or group of cells in an environment." [OMP:MCC]
+
+[Term]
+id: OMP:0000176
+name: biofilm formation phenotype
+def: "A multi-organism phenotype dealing with the process in which microorganisms attach to and grow on a surface and produce extracellular polymers that facilitate attachment and matrix formation." [GO:0042710, OMP:WAM]
+is_a: OMP:0005116 ! multi-organism process phenotype
+
+[Term]
+id: OMP:0000282
+name: decreased population growth rate
+def: "An altered population growth rate phenotype where the rate at which a microbial population multiplies is decreased relative to a designated control." [OMP:DAS]
+synonym: "decreased growth rate" EXACT []
+synonym: "increased doubling time" NARROW []
+synonym: "increased generation time" EXACT []
+is_a: OMP:0007115 ! altered population growth rate
+
+[Term]
+id: OMP:0000283
+name: increased population growth rate
+def: "An altered growth rate phenotype where the rate at which a microbial population multiplies is increased relative to a designated control." [OMP:DAS]
+synonym: "decreased doubling time" NARROW []
+synonym: "decreased generation time" EXACT []
+synonym: "increased growth rate" EXACT []
+is_a: OMP:0007115 ! altered population growth rate
+
+[Term]
+id: OMP:0005116
+name: multi-organism process phenotype
+def: "A microbial phenotype related to a biological process that involves two or more organisms of the same or different species." [GO:0051704, OMP:DAS]
+is_a: OMP:0000000 ! microbial phenotype
+
+[Term]
+id: OMP:0007006
+name: population phenotype
+def: "A microbial phenotype where the phenotype is observed at the level of a microbial population." [OMP:DAS]
+is_a: OMP:0000000 ! microbial phenotype
+
+[Term]
+id: OMP:0007085
+name: altered microbial phenotype
+def: "A microbial phenotype that is altered in some way relative to a designated control." [OMP:DAS]
+is_a: OMP:0000000 ! microbial phenotype
+
+[Term]
+id: OMP:0007115
+name: altered population growth rate
+def: "A population growth phenotype where the rate at which a population of microbes multiplies is altered relative to a designated control." [OMP:DAS]
+synonym: "altered doubling time" NARROW []
+synonym: "altered generation time" EXACT []
+synonym: "altered growth rate" EXACT []
+is_a: OMP:0007156 ! population growth rate phenotype
+is_a: OMP:0007157 ! altered population growth
+
+[Term]
+id: OMP:0007156
+name: population growth rate phenotype
+def: "A population growth phenotype concerning the rate at which a microbial population multiplies over time." [OMP:DAS]
+is_a: OMP:0007167 ! population growth phenotype
+
+[Term]
+id: OMP:0007157
+name: altered population growth
+def: "A population growth phenotype where the rate and/or extent of growth of a microbial population is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007167 ! population growth phenotype
+is_a: OMP:0007351 ! altered biological process
+is_a: OMP:0007931 ! altered population phenotype
+
+[Term]
+id: OMP:0007167
+name: population growth phenotype
+def: "A microbial phenotype relating to the growth of a microbial population, i.e. an increase in the size of the population resulting from reproduction of individual microbes in the population." [OMP:DAS]
+
+[Term]
+id: OMP:0007194
+name: biological process phenotype
+def: "A microbial phenotype that affects a biological process." [FYPO:0000300, OMP:DAS]
+is_a: OMP:0000000 ! microbial phenotype
+
+[Term]
+id: OMP:0007351
+name: altered biological process
+def: "A biological process phenotype where the rate, frequency, timing, or extent of a biological process is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007085 ! altered microbial phenotype
+is_a: OMP:0007194 ! biological process phenotype
+
+[Term]
+id: OMP:0007931
+name: altered population phenotype
+def: "A microbial population phenotype where the phenotype of a microbial population is altered in some way relative to a designated control." [OMP:das]
+is_a: OMP:0007006 ! population phenotype
 

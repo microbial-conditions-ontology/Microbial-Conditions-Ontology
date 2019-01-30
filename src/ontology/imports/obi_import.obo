@@ -1,3 +1,86 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: 2018-08-27
+ontology: obi
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000001>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000001> (entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000001> owl:Thing)\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: OBI:0000047
+name: processed material
+def: "Is a material entity that is created or changed during material processing." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: OBI:0000079
+name: culture medium
+def: "a processed material that provides the needed nourishment for microorganisms or cells grown in vitro." []
+
+[Term]
+id: OBI:0000192
+name: microtiter plate
+def: "A microtiter_plate is a flat plate with multiple wells used as small test tubes." []
+is_a: OBI:0000967 ! container
+
+[Term]
+id: OBI:0000836
+name: test tube
+def: "A test tube is a device consisting of a glass or plastic tubing, open at the top, usually with a rounded U-shaped bottom which has the function to contain material" []
+is_a: OBI:0000967 ! container
+
+[Term]
+id: OBI:0000967
+name: container
+def: "A device that can be used to restrict the location of material entities over time" []
+
+[Term]
+id: OBI:0000968
+name: device
+def: "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent." []
+is_a: OBI:0000047 ! processed material
+
+[Term]
+id: OBI:0001034
+name: environmental control device
+def: "An environmental control device is a device which has the function to control some aspect of the environment such as temperature, or humidity." []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0001046
+name: bioreactor
+def: "A device or system that supports a biologically active environment. ALAN SAYS NOT AN INSTRUMENT" []
+is_a: OBI:0002089 ! physical store
+
+[Term]
+id: OBI:0002089
+name: physical store
+def: "A container with an environmental control function." []
+is_a: OBI:0000967 ! container
+is_a: OBI:0001034 ! environmental control device
+
+[Term]
+id: OBI:0400043
+name: flow cell
+def: "Aparatus in the fluidic subsystem where the sheath and sample meet. Can be one of several types; jet-in-air, quartz cuvette, or a hybrid of the two. The sample flows through the center of a fluid column of sheath fluid in the flow cell." []
+is_a: OBI:0000967 ! container
 

@@ -1,3 +1,31 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2018-08-15
+ontology: peco
+
+[Term]
+id: PECO:0001036
+name: chemical stress exposure
+def: "A chemical exposure (PECO:0007189) that induces stress." [PECO:cooperl]
+synonym: "chemical stress treatment (narrow)" NARROW []
+
+[Term]
+id: PECO:0001037
+name: oxidative stress exposure
+def: "A chemical stress exposure (PECO:0001036) involving use of oxidative stress-inducing chemicals." [PECO:cooperl]
+synonym: "oxidative stress treatment (narrow)" NARROW []
+is_a: PECO:0001036 ! chemical stress exposure
+
+[Term]
+id: PECO:0001038
+name: osmotic stress exposure
+def: "A chemical stress exposure (PECO:0001036) involving use of osmotic stress-inducing chemicals." [PECO:cooperl]
+synonym: "osmotic stress treatment (narrow)" NARROW []
+is_a: PECO:0001036 ! chemical stress exposure
+
+[Term]
+id: PECO:0007178
+name: atmospheric pressure exposure
+def: "The treatment involving an exposure to a given pressure of the atmosphere at a given point. Its measurement can be expressed in several ways. One is in millibars. Another is in inches or millimeters of mercury (Hg)." [Gramene:pankaj_jaiswal]
+synonym: "atmospheric pressure treatment (narrow)" NARROW []
+synonym: "barometric pressure (related)" RELATED []
 

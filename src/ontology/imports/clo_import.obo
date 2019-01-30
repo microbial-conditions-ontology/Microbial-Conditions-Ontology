@@ -1,3 +1,7 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+ontology: clo
+
+[Term]
+id: CLO:0003707
+name: HEp-2 cell
 

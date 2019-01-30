@@ -2,3 +2,4 @@ http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000188
 http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000189
 http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000201
 http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000202
+http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000214

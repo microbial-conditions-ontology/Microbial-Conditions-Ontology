@@ -1,0 +1,175 @@
+format-version: 1.2
+ontology: MicrO
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000001>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000001> (<http://purl.obolibrary.org/obo/BFO_0000001>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000001> owl:Thing)\n\n\n)
+
+[Term]
+id: BFO:0000002
+is_a: BFO:0000001
+
+[Term]
+id: BFO:0000003
+is_a: BFO:0000001
+
+[Term]
+id: BFO:0000004
+is_a: BFO:0000002
+
+[Term]
+id: BFO:0000015
+is_a: BFO:0000003
+
+[Term]
+id: BFO:0000040
+is_a: BFO:0000004
+
+[Term]
+id: CHEBI:24431
+is_a: BFO:0000040
+
+[Term]
+id: CHEBI:59999
+is_a: CHEBI:24431
+
+[Term]
+id: CHEBI:60004
+is_a: CHEBI:59999
+
+[Term]
+id: GO:0008150
+is_a: BFO:0000015
+
+[Term]
+id: GO:0008152
+is_a: GO:0008150
+
+[Term]
+id: GO:0044699
+is_a: GO:0008150
+
+[Term]
+id: GO:0044710
+is_a: GO:0008152
+is_a: GO:0044699
+
+[Term]
+id: MICRO:0000067
+name: microbiological culture medium
+synonym: "culture media" BROAD []
+synonym: "growth media" BROAD []
+synonym: "growth medium" BROAD []
+synonym: "media" BROAD []
+synonym: "medium" BROAD []
+is_a: OBI:0000079
+
+[Term]
+id: MICRO:0000115
+name: prokaryotic metabolic process
+is_a: GO:0044710
+
+[Term]
+id: MICRO:0000116
+name: chemical mixture, serving as microbiological medium ingredients
+is_a: CHEBI:60004
+
+[Term]
+id: MICRO:0000164
+name: organic chemical mixture
+is_a: MICRO:0000116 ! chemical mixture, serving as microbiological medium ingredients
+
+[Term]
+id: MICRO:0000167
+name: undefined organic chemical mixture
+is_a: MICRO:0000164 ! organic chemical mixture
+
+[Term]
+id: MICRO:0000170
+name: microbiological medium ingredient, derived from extracts of microbial organisms
+is_a: MICRO:0001370 ! microbiological medium ingredient, derived from aqueous extracts
+
+[Term]
+id: MICRO:0000172
+name: microbiological medium ingredient, derived from extracts of proteinaceous material
+is_a: MICRO:0000167 ! undefined organic chemical mixture
+
+[Term]
+id: MICRO:0000173
+name: microbiological medium ingredient, derived from chemical hydrolysis of protein
+is_a: MICRO:0000172 ! microbiological medium ingredient, derived from extracts of proteinaceous material
+
+[Term]
+id: MICRO:0000174
+name: microbiological medium ingredient, derived from enzymatic hydrolysis of protein
+is_a: MICRO:0000172 ! microbiological medium ingredient, derived from extracts of proteinaceous material
+
+[Term]
+id: MICRO:0000182
+name: tryptone
+synonym: "Bacto Tryptone" NARROW []
+synonym: "Bacto-Tryptone" NARROW []
+synonym: "Proteose Tryptone" NARROW []
+is_a: MICRO:0001366 ! casein hydrolysate
+
+[Term]
+id: MICRO:0000184
+name: casamino acids
+is_a: MICRO:0000173 ! microbiological medium ingredient, derived from chemical hydrolysis of protein
+
+[Term]
+id: MICRO:0000201
+name: yeast extract
+is_a: MICRO:0000170 ! microbiological medium ingredient, derived from extracts of microbial organisms
+
+[Term]
+id: MICRO:0000465
+name: microbiological medium ingredient, derived from enzymatic hydrolysis of milk protein
+is_a: MICRO:0000174 ! microbiological medium ingredient, derived from enzymatic hydrolysis of protein
+
+[Term]
+id: MICRO:0000558
+name: MacConkey agar
+synonym: "MacConkey medium" BROAD []
+is_a: MICRO:0000067 ! microbiological culture medium
+
+[Term]
+id: MICRO:0000562
+name: LB medium
+is_a: MICRO:0000067 ! microbiological culture medium
+
+[Term]
+id: MICRO:0001366
+name: casein hydrolysate
+is_a: MICRO:0000465 ! microbiological medium ingredient, derived from enzymatic hydrolysis of milk protein
+
+[Term]
+id: MICRO:0001370
+name: microbiological medium ingredient, derived from aqueous extracts
+is_a: MICRO:0000167 ! undefined organic chemical mixture
+
+[Term]
+id: MICRO:0001526
+name: (an)aerobiosis
+is_a: MICRO:0000115 ! prokaryotic metabolic process
+
+[Term]
+id: MICRO:0001528
+name: anaerobiosis
+is_a: MICRO:0001526 ! (an)aerobiosis
+
+[Term]
+id: MICRO:0001531
+name: aerobiosis
+is_a: MICRO:0001526 ! (an)aerobiosis
+
+[Term]
+id: MICRO:0002316
+name: DSMZ Medium 382
+is_a: MICRO:0000067 ! microbiological culture medium
+
+[Term]
+id: OBI:0000047
+is_a: BFO:0000040
+
+[Term]
+id: OBI:0000079
+is_a: OBI:0000047
+

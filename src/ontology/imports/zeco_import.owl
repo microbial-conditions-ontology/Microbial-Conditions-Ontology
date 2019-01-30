@@ -1,28 +1,152 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/zeco.owl#"
+     xml:base="http://purl.obolibrary.org/obo/zeco.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:obo="http://purl.obolibrary.org/obo/">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/bfo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/chebi_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/cl_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/clo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/efo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/peco_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/ncit_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/npo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/obi_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/omit_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/omp_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/pato_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/sio_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/uberon_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/zeco_import.owl"/>
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/zeco.owl"/>
+    
 
-    <!-- This is a placeholder, it will be regenerated when makefile is first executed -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000187 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000187">
+        <rdfs:label xml:lang="en">oxygen content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000188 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000188">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000187"/>
+        <rdfs:label xml:lang="en">hyperoxia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000189 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000189">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000187"/>
+        <rdfs:label xml:lang="en">hypoxia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000200 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000200">
+        <rdfs:label xml:lang="en">pH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000201 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000201">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000200"/>
+        <obo:IAO_0000115>Experimental condition in which the pH of the water is lower than the pH of the controlled conditions.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">acidic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000202 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000202">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000200"/>
+        <obo:IAO_0000115>Experimental condition in which the pH of the water is higher than the pH of the controlled conditions.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">basic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000208">
+        <rdfs:label xml:lang="en">radiation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000209 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000209">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000208"/>
+        <rdfs:label xml:lang="en">electromagnetic radiation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000214 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000214">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000209"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electromagnetic radiation with a wavelength from 10 nm to 400nm. Long-wavelength ultraviolet radiation can cause chemical reactions and causes many substances to glow or fluoresce.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>UV</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>UV light</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ultraviolet light</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/zeco.owl/ZECO_0000214"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electromagnetic radiation with a wavelength from 10 nm to 400nm. Long-wavelength ultraviolet radiation can cause chemical reactions and causes many substances to glow or fluoresce.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Ultraviolet</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+

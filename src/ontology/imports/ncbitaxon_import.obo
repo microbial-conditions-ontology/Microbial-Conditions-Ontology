@@ -1,0 +1,174 @@
+format-version: 1.2
+data-version: 2018-07-27
+ontology: ncbitaxon
+
+[Term]
+id: NCBITaxon:1110693
+name: Escherichia coli str. K-12 substr. MDS42
+synonym: "Escherichia coli MDS42" EXACT equivalent_name []
+synonym: "Escherichia coli strain K-12 substrain MDS42" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:1211845
+name: Escherichia coli MC1061
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:1224
+name: Proteobacteria
+synonym: "Alphaproteobacteraeota" RELATED synonym []
+synonym: "proteobacteria" RELATED blast_name []
+synonym: "purple bacteria" EXACT common_name []
+synonym: "purple bacteria and relatives" EXACT common_name []
+synonym: "purple non-sulfur bacteria" EXACT common_name []
+synonym: "purple photosynthetic bacteria" EXACT common_name []
+synonym: "purple photosynthetic bacteria and relatives" EXACT common_name []
+is_a: NCBITaxon:2 ! Bacteria
+
+[Term]
+id: NCBITaxon:1236
+name: Gammaproteobacteria
+synonym: "g-proteobacteria" RELATED blast_name []
+synonym: "gamma proteobacteria" RELATED synonym []
+synonym: "gamma subdivision" RELATED synonym []
+synonym: "gamma subgroup" RELATED synonym []
+synonym: "Proteobacteria gamma subdivision" RELATED synonym []
+synonym: "Purple bacteria, gamma subdivision" RELATED synonym []
+is_a: NCBITaxon:1224 ! Proteobacteria
+
+[Term]
+id: NCBITaxon:1245474
+name: Escherichia coli ER2796
+synonym: "Escherichia coli DB24" RELATED synonym []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:131567
+name: cellular organisms
+synonym: "biota" RELATED synonym []
+
+[Term]
+id: NCBITaxon:1318715
+name: Escherichia coli BW38028
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:1403831
+name: Escherichia coli str. K-12 substr. MC4100
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:1420014
+name: Escherichia coli str. K-12 substr. MG1656
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:2
+name: Bacteria
+synonym: "bacteria" RELATED blast_name []
+synonym: "eubacteria" EXACT genbank_common_name []
+synonym: "Monera" RELATED in_part []
+synonym: "Procaryotae" RELATED in_part []
+synonym: "Prokaryota" RELATED in_part []
+synonym: "Prokaryotae" RELATED in_part []
+synonym: "prokaryote" RELATED in_part []
+synonym: "prokaryotes" RELATED in_part []
+is_a: NCBITaxon:131567 ! cellular organisms
+
+[Term]
+id: NCBITaxon:316385
+name: Escherichia coli str. K-12 substr. DH10B
+synonym: "Escherichia coli DH10B" EXACT equivalent_name []
+synonym: "Escherichia coli str. K12 substr. DH10B" EXACT equivalent_name []
+synonym: "Escherichia coli strain K12 substrain DH10B" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:316407
+name: Escherichia coli str. K-12 substr. W3110
+synonym: "Escherichia coli str. K12 substr. W3110" EXACT equivalent_name []
+synonym: "Escherichia coli str. W3110" EXACT equivalent_name []
+synonym: "Escherichia coli strain W3110" EXACT equivalent_name []
+synonym: "Escherichia coli W3110" RELATED synonym []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:511145
+name: Escherichia coli str. K-12 substr. MG1655
+synonym: "Escherichia coli MG1655" RELATED synonym []
+synonym: "Escherichia coli str. K12 substr. MG1655" EXACT equivalent_name []
+synonym: "Escherichia coli str. MG1655" EXACT equivalent_name []
+synonym: "Escherichia coli strain MG1655" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:527799
+name: Escherichia coli LW1655F+
+synonym: "Escherichia coli str. LW1655F+" EXACT equivalent_name []
+synonym: "Escherichia coli strain LW1655F+" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:531853
+name: Escherichia coli NC-7
+synonym: "Escherichia coli str. NC-7" EXACT equivalent_name []
+synonym: "Escherichia coli strain NC-7" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:543
+name: Enterobacteriaceae
+synonym: "Enterobacteraceae" RELATED synonym []
+synonym: "gamma-3 proteobacteria" RELATED in_part []
+is_a: NCBITaxon:91347 ! Enterobacterales
+
+[Term]
+id: NCBITaxon:561
+name: Escherichia
+synonym: "Escherchia" RELATED misspelling []
+is_a: NCBITaxon:543 ! Enterobacteriaceae
+
+[Term]
+id: NCBITaxon:562
+name: Escherichia coli
+synonym: "Bacillus coli" RELATED synonym []
+synonym: "Bacterium coli" RELATED synonym []
+synonym: "Bacterium coli commune" RELATED synonym []
+synonym: "E. coli" EXACT common_name []
+synonym: "Enterococcus coli" RELATED synonym []
+synonym: "Escherchia coli" RELATED misspelling []
+synonym: "Escherichia/Shigella coli" EXACT equivalent_name []
+synonym: "Eschericia coli" RELATED misspelling []
+is_a: NCBITaxon:561 ! Escherichia
+
+[Term]
+id: NCBITaxon:595496
+name: Escherichia coli BW2952
+synonym: "Escherichia coli str. BW2952" EXACT equivalent_name []
+synonym: "Escherichia coli strain BW2952" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:679895
+name: Escherichia coli BW25113
+synonym: "Escherichia coli str. BW25113" EXACT equivalent_name []
+synonym: "Escherichia coli strain BW25113" EXACT equivalent_name []
+is_a: NCBITaxon:83333 ! Escherichia coli K-12
+
+[Term]
+id: NCBITaxon:83333
+name: Escherichia coli K-12
+synonym: "Escherichia coli K12" EXACT equivalent_name []
+is_a: NCBITaxon:562 ! Escherichia coli
+
+[Term]
+id: NCBITaxon:91347
+name: Enterobacterales
+synonym: "enterobacteria" RELATED blast_name []
+synonym: "Enterobacteriaceae and related endosymbionts" RELATED synonym []
+synonym: "Enterobacteriaceae group" RELATED synonym []
+synonym: "Enterobacteriales" RELATED synonym []
+synonym: "gamma-3 proteobacteria" RELATED in_part []
+is_a: NCBITaxon:1236 ! Gammaproteobacteria
+
