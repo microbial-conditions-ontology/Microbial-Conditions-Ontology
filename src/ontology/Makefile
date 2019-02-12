@@ -36,7 +36,7 @@ prepare_release: all
 $(ONT).owl: $(SRC)
 	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 $(ONT).obo: $(ONT).owl
-	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	$(ROBOT) convert --check false -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 # ----------------------------------------
 # Import modules
@@ -123,7 +123,8 @@ imports/zeco_import.owl: mirror/zeco.owl imports/zeco_terms.txt imports/zeco_upp
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
-	$(OWLTOOLS) $(USECAT) $< -o -f obo $@
+#	$(OWLTOOLS) $(USECAT) $< -o -f obo $@
+	$(ROBOT) convert --check false -i $< -o $@ --format obo # trying to use robot instead of owltools to avoid error "multiple def tags not allowed"
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: $(SRC)
