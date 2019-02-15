@@ -701,8 +701,8 @@ is_a: CHEBI:33579 ! main group molecular entity
 id: CHEBI:13941
 name: carbamate
 synonym: "Carbamat" RELATED [ChEBI]
-synonym: "carbamate" EXACT IUPAC_NAME [IUPAC]
 synonym: "carbamate" EXACT [UniProt]
+synonym: "carbamate" EXACT IUPAC_NAME [IUPAC]
 synonym: "carbamate ion" RELATED [ChemIDplus]
 synonym: "carbamic acid, ion(1-)" RELATED [ChemIDplus]
 synonym: "Karbamat" RELATED [ChEBI]
@@ -858,7 +858,6 @@ def: "A divalent inorganic anion obtained by removal of both protons from hydrog
 synonym: "S(2-)" RELATED [IUPAC]
 synonym: "sulfanediide" EXACT IUPAC_NAME [IUPAC]
 synonym: "Sulfide" RELATED [ChemIDplus]
-synonym: "sulfide" RELATED [UniProt]
 synonym: "sulfide(2-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "sulphide" RELATED [ChEBI]
 is_a: CHEBI:79388 ! divalent inorganic anion
@@ -977,8 +976,8 @@ synonym: "cisteina" RELATED [ChEBI]
 synonym: "Cys" RELATED [ChEBI]
 synonym: "Cystein" RELATED [ChEBI]
 synonym: "Cysteine" EXACT [KEGG_COMPOUND]
-synonym: "cysteine" EXACT [ChEBI]
 synonym: "cysteine" EXACT IUPAC_NAME [IUPAC]
+synonym: "cysteine" EXACT [ChEBI]
 synonym: "Hcys" RELATED [IUPAC]
 synonym: "Zystein" RELATED [ChEBI]
 is_a: CHEBI:26834 ! sulfur-containing amino acid
@@ -1291,7 +1290,6 @@ synonym: "internally compensated tartaric acid" RELATED [NIST_Chemistry_WebBook]
 synonym: "m-tartaric acid" RELATED [ChEBI]
 synonym: "meso-Tartaric acid" EXACT [KEGG_COMPOUND]
 synonym: "meso-tartaric acid" EXACT [IUPAC]
-synonym: "meso-tartaric acid" EXACT [UniProt]
 synonym: "mesotartaric acid" RELATED [ChemIDplus]
 synonym: "Mesoweinsaeure" RELATED [ChEBI]
 synonym: "S,R MESO-TARTARIC ACID" RELATED [PDBeChem]
@@ -1833,7 +1831,6 @@ synonym: "4-amino-3-hydroxybutanoic acid" EXACT IUPAC_NAME [IUPAC]
 synonym: "4-amino-3-hydroxybutyric acid" RELATED [ChemIDplus]
 synonym: "GABOB" RELATED [KEGG_COMPOUND]
 synonym: "gamma-Amino-beta-hydroxybutyric acid" EXACT [KEGG_COMPOUND]
-synonym: "gamma-amino-beta-hydroxybutyric acid" EXACT [UniProt]
 is_a: CHEBI:33707 ! gamma-amino acid
 is_a: CHEBI:35969 ! 3-hydroxy monocarboxylic acid
 relationship: has_functional_parent CHEBI:30772 ! butyric acid
@@ -2109,8 +2106,8 @@ synonym: "Dehydrated ethanol" RELATED BRAND_NAME [KEGG_DRUG]
 synonym: "etanol" RELATED [ChEBI]
 synonym: "ETHANOL" EXACT [PDBeChem]
 synonym: "Ethanol" EXACT [KEGG_COMPOUND]
-synonym: "ethanol" EXACT [ChEBI]
 synonym: "ethanol" EXACT IUPAC_NAME [IUPAC]
+synonym: "ethanol" EXACT [ChEBI]
 synonym: "ethanol" EXACT [UniProt]
 synonym: "Ethyl alcohol" RELATED [KEGG_COMPOUND]
 synonym: "EtOH" RELATED [ChemIDplus]
@@ -2282,8 +2279,8 @@ synonym: "Adenoscan" RELATED BRAND_NAME [DrugBank]
 synonym: "Adenosin" RELATED [ChEBI]
 synonym: "ADENOSINE" EXACT [PDBeChem]
 synonym: "Adenosine" EXACT [KEGG_COMPOUND]
-synonym: "adenosine" EXACT [UniProt]
 synonym: "adenosine" EXACT IUPAC_NAME [IUPAC]
+synonym: "adenosine" EXACT [UniProt]
 synonym: "Adenyldeoxyriboside" RELATED [DrugBank]
 synonym: "Ado" RELATED [CBN]
 synonym: "beta-D-Adenosine" RELATED [ChemIDplus]
@@ -3955,7 +3952,6 @@ synonym: "CN-" RELATED [KEGG_COMPOUND]
 synonym: "Cyanide" EXACT [KEGG_COMPOUND]
 synonym: "Cyanide" EXACT [ChEBI]
 synonym: "cyanide" EXACT IUPAC_NAME [IUPAC]
-synonym: "cyanide" EXACT [UniProt]
 synonym: "CYANIDE ION" RELATED [PDBeChem]
 synonym: "nitridocarbonate(1-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "Prussiate" RELATED [KEGG_COMPOUND]
@@ -3990,8 +3986,8 @@ synonym: "HCO3-" RELATED [KEGG_COMPOUND]
 synonym: "hydrogen carbonate" RELATED [PDBeChem]
 synonym: "hydrogen(trioxidocarbonate)(1-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "Hydrogencarbonate" EXACT [KEGG_COMPOUND]
-synonym: "hydrogencarbonate" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydrogencarbonate" EXACT [UniProt]
+synonym: "hydrogencarbonate" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydrogencarbonate(1-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydrogentrioxocarbonate(1-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydrogentrioxocarbonate(IV)" EXACT IUPAC_NAME [IUPAC]
@@ -4160,7 +4156,6 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 id: CHEBI:17608
 name: D-aldohexose
 def: "Any D-aldose having a chain of six carbon atoms in the molecule." []
-synonym: "D-aldohexose" EXACT [UniProt]
 synonym: "D-aldohexoses" RELATED [ChEBI]
 is_a: CHEBI:33917 ! aldohexose
 is_a: CHEBI:4194 ! D-hexose
@@ -4195,8 +4190,8 @@ id: CHEBI:17632
 name: nitrate
 def: "A nitrogen oxoanion formed by loss of a proton from nitric acid. Principal species present at pH 7.3." []
 synonym: "[NO3](-)" RELATED [IUPAC]
-synonym: "nitrate" EXACT IUPAC_NAME [IUPAC]
 synonym: "nitrate" EXACT [UniProt]
+synonym: "nitrate" EXACT IUPAC_NAME [IUPAC]
 synonym: "NITRATE ION" RELATED [PDBeChem]
 synonym: "nitrate(1-)" RELATED [ChemIDplus]
 synonym: "NO3" RELATED [ChEBI]
@@ -4261,7 +4256,6 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 id: CHEBI:17668
 name: ribonucleoside diphosphate
 synonym: "Ribonucleoside diphosphate" EXACT [KEGG_COMPOUND]
-synonym: "ribonucleoside diphosphate" EXACT [UniProt]
 synonym: "ribonucleoside diphosphates" RELATED [ChEBI]
 is_a: CHEBI:16862 ! nucleoside diphosphate
 
@@ -4543,8 +4537,8 @@ relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 id: CHEBI:17879
 name: 4-hydroxybenzoate
 def: "The conjugate base of 4-hydroxybenzoic acid, comprising a 4-hydroxybenzoic acid core with a proton missing to give a charge of -1." []
-synonym: "4-hydroxybenzoate" EXACT IUPAC_NAME [IUPAC]
 synonym: "4-hydroxybenzoate" EXACT [UniProt]
+synonym: "4-hydroxybenzoate" EXACT IUPAC_NAME [IUPAC]
 synonym: "4-hydroxybenzoic acid, ion(1-)" RELATED [ChemIDplus]
 synonym: "p-hydroxybenzoate" RELATED [ChemIDplus]
 is_a: CHEBI:25388 ! monohydroxybenzoate
@@ -4594,7 +4588,6 @@ def: "A 2-hydroxy monocarboxylic acid having (2R)-configuration." []
 synonym: "(2R)-2-hydroxy monocarboxylic acids" RELATED [ChEBI]
 synonym: "(2R)-Hydroxy-carboxylate" RELATED [KEGG_COMPOUND]
 synonym: "(R)-2-Hydroxyacid" RELATED [KEGG_COMPOUND]
-synonym: "(R)-2-hydroxyacid" RELATED [UniProt]
 synonym: "(R)-2-Hydroxycarboxylic acid" RELATED [KEGG_COMPOUND]
 is_a: CHEBI:49302 ! 2-hydroxy monocarboxylic acid
 relationship: is_conjugate_acid_of CHEBI:58314 ! (2R)-2-hydroxy monocarboxylic acid anion
@@ -4714,8 +4707,8 @@ id: CHEBI:17996
 name: chloride
 def: "A halide anion formed when chlorine picks up an electron to form an an anion." []
 synonym: "Chloride" EXACT [KEGG_COMPOUND]
-synonym: "chloride" EXACT IUPAC_NAME [IUPAC]
 synonym: "chloride" EXACT [UniProt]
+synonym: "chloride" EXACT IUPAC_NAME [IUPAC]
 synonym: "CHLORIDE ION" RELATED [PDBeChem]
 synonym: "Chloride ion" RELATED [KEGG_COMPOUND]
 synonym: "Chloride(1-)" RELATED [ChemIDplus]
@@ -4917,7 +4910,6 @@ synonym: "tirosina" RELATED [ChEBI]
 synonym: "Tyr" RELATED [ChEBI]
 synonym: "Tyrosin" RELATED [ChEBI]
 synonym: "Tyrosine" EXACT [KEGG_COMPOUND]
-synonym: "tyrosine" EXACT [UniProt]
 synonym: "tyrosine" EXACT IUPAC_NAME [IUPAC]
 synonym: "Y" RELATED [ChEBI]
 is_a: CHEBI:33704 ! alpha-amino acid
@@ -4977,7 +4969,6 @@ synonym: "Xyl" RELATED [JCBN]
 synonym: "xylo-pentose" EXACT IUPAC_NAME [IUPAC]
 synonym: "Xylose" EXACT [KEGG_COMPOUND]
 synonym: "xylose" EXACT IUPAC_NAME [IUPAC]
-synonym: "xylose" EXACT [UniProt]
 is_a: CHEBI:33916 ! aldopentose
 relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 
@@ -5217,8 +5208,8 @@ id: CHEBI:18391
 name: D-gluconate
 def: "A gluconate having D-configuration." []
 synonym: "2,3,4,5,6-pentahydroxyhexanoate" RELATED [HMDB]
-synonym: "D-gluconate" EXACT [UniProt]
 synonym: "D-gluconate" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-gluconate" EXACT [UniProt]
 synonym: "Dextronate" RELATED [HMDB]
 synonym: "Glycogenate" RELATED [HMDB]
 synonym: "Glyconate" RELATED [HMDB]
@@ -5855,8 +5846,8 @@ id: CHEBI:22563
 name: anion
 def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
 synonym: "Anion" EXACT [ChEBI]
-synonym: "anion" EXACT [ChEBI]
 synonym: "anion" EXACT IUPAC_NAME [IUPAC]
+synonym: "anion" EXACT [ChEBI]
 synonym: "Anionen" RELATED [ChEBI]
 synonym: "aniones" RELATED [ChEBI]
 synonym: "anions" RELATED [IUPAC]
@@ -6008,8 +5999,8 @@ id: CHEBI:22695
 name: base
 def: "A molecular entity having an available pair of electrons capable of forming a covalent bond with a hydron (Bronsted base) or with the vacant orbital of some other molecular entity (Lewis base)." []
 synonym: "Base" EXACT [ChEBI]
-synonym: "base" EXACT IUPAC_NAME [IUPAC]
 synonym: "base" EXACT [ChEBI]
+synonym: "base" EXACT IUPAC_NAME [IUPAC]
 synonym: "Base1" RELATED [KEGG_COMPOUND]
 synonym: "Base2" RELATED [KEGG_COMPOUND]
 synonym: "Basen" RELATED [ChEBI]
@@ -6264,8 +6255,8 @@ id: CHEBI:23019
 name: carbonyl group
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 
 [Term]
@@ -6320,8 +6311,8 @@ relationship: BFO:0000051 CHEBI:23116 ! chlorine atom
 id: CHEBI:23123
 name: chloroacetate
 def: "A haloacetate(1-) resulting from the deprotonation of the carboxy group of chloroacetic acid." []
-synonym: "chloroacetate" EXACT IUPAC_NAME [IUPAC]
 synonym: "chloroacetate" EXACT [UniProt]
+synonym: "chloroacetate" EXACT IUPAC_NAME [IUPAC]
 synonym: "chloroacetate anion" RELATED [ChEBI]
 synonym: "chloroacetate(1-)" RELATED [ChEBI]
 synonym: "Chloroacetic acid ion(1-)" RELATED [ChEBI]
@@ -6372,7 +6363,6 @@ is_a: CHEBI:52215 ! photochemical role
 id: CHEBI:23336
 name: cobalt cation
 synonym: "cobalt cation" EXACT IUPAC_NAME [IUPAC]
-synonym: "cobalt cation" EXACT [UniProt]
 synonym: "cobalt cations" RELATED [ChEBI]
 is_a: CHEBI:33515 ! transition element cation
 
@@ -7271,8 +7261,8 @@ synonym: "HOCl" RELATED [IUPAC]
 synonym: "hydroxidochlorine" EXACT IUPAC_NAME [IUPAC]
 synonym: "hypochloric acid" RELATED [ChEBI]
 synonym: "hypochlorige Saeure" RELATED [ChEBI]
-synonym: "hypochlorous acid" EXACT [UniProt]
 synonym: "hypochlorous acid" EXACT IUPAC_NAME [IUPAC]
+synonym: "hypochlorous acid" EXACT [UniProt]
 is_a: CHEBI:26523 ! reactive oxygen species
 is_a: CHEBI:33426 ! chlorine oxoacid
 relationship: is_conjugate_acid_of CHEBI:29222 ! hypochlorite
@@ -8412,8 +8402,8 @@ def: "The nitrogen oxoanion formed by loss of a proton from peroxynitrous acid."
 synonym: "[NO(OO)](-)" RELATED [IUPAC]
 synonym: "azoperoxoite" EXACT IUPAC_NAME [IUPAC]
 synonym: "oxidoperoxidonitrate(1-)" EXACT IUPAC_NAME [IUPAC]
-synonym: "peroxynitrite" EXACT [IUPAC]
 synonym: "peroxynitrite" EXACT [UniProt]
+synonym: "peroxynitrite" EXACT [IUPAC]
 is_a: CHEBI:26523 ! reactive oxygen species
 is_a: CHEBI:33458 ! nitrogen oxoanion
 is_a: CHEBI:62764 ! reactive nitrogen species
@@ -8533,6 +8523,7 @@ is_a: CHEBI:39317 ! growth regulator
 id: CHEBI:26167
 name: polar amino acid
 is_a: CHEBI:33709 ! amino acid
+relationship: is_tautomer_of CHEBI:62031 ! polar amino acid zwitterion
 
 [Term]
 id: CHEBI:26188
@@ -8597,8 +8588,8 @@ synonym: "DL-Proline" RELATED [KEGG_COMPOUND]
 synonym: "Hpro" RELATED [IUPAC]
 synonym: "Prolin" RELATED [ChEBI]
 synonym: "prolina" RELATED [ChEBI]
-synonym: "proline" EXACT IUPAC_NAME [IUPAC]
 synonym: "proline" EXACT [ChEBI]
+synonym: "proline" EXACT IUPAC_NAME [IUPAC]
 synonym: "pyrrolidine-2-carboxylic acid" RELATED [IUPAC]
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:38260 ! pyrrolidines
@@ -8879,7 +8870,6 @@ id: CHEBI:26546
 name: rhamnose
 def: "A deoxymannose sugar that is the 6-deoxy derivative of hexose." []
 synonym: "ramnose" RELATED [ChEBI]
-synonym: "rhamnose" EXACT [UniProt]
 is_a: CHEBI:33983 ! deoxymannose
 relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:76969 ! bacterial metabolite
@@ -8944,9 +8934,8 @@ synonym: "[SeO(OH)2]" RELATED [IUPAC]
 synonym: "dihydroxidooxidoselenium" EXACT IUPAC_NAME [IUPAC]
 synonym: "selenige Saeure" RELATED [ChEBI]
 synonym: "selenious acid" RELATED [ChemIDplus]
-synonym: "selenous acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "selenous acid" EXACT [UniProt]
 synonym: "selenous acid" EXACT [ChEBI]
+synonym: "selenous acid" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:33489 ! selenium oxoacid
 relationship: is_conjugate_acid_of CHEBI:29924 ! hydrogenselenite
 
@@ -9507,13 +9496,14 @@ relationship: is_conjugate_acid_of CHEBI:33549 ! uronate
 [Term]
 id: CHEBI:27311
 name: volatile oil component
-def: "Any metabolite that is found naturally as a component of a volatile oil." []
+def: "Any plant metabolite that is found naturally as a component of a volatile oil." []
 synonym: "essential oil component" RELATED [ChEBI]
 synonym: "essential oil components" RELATED [ChEBI]
 synonym: "ethereal oil component" RELATED [ChEBI]
 synonym: "ethereal oil components" RELATED [ChEBI]
 synonym: "volatile oil components" RELATED [ChEBI]
-is_a: CHEBI:25212 ! metabolite
+is_a: CHEBI:52206 ! biochemical role
+is_a: CHEBI:76924 ! plant metabolite
 
 [Term]
 id: CHEBI:27314
@@ -9684,8 +9674,8 @@ relationship: RO:0000087 CHEBI:27027 ! micronutrient
 id: CHEBI:27594
 name: carbon atom
 synonym: "6C" RELATED [IUPAC]
-synonym: "C" RELATED [IUPAC]
 synonym: "C" RELATED [KEGG_COMPOUND]
+synonym: "C" RELATED [IUPAC]
 synonym: "Carbon" RELATED [KEGG_COMPOUND]
 synonym: "carbon" EXACT IUPAC_NAME [IUPAC]
 synonym: "carbon" RELATED [ChEBI]
@@ -9726,8 +9716,8 @@ synonym: "caprate" RELATED [ChEBI]
 synonym: "caprinate" RELATED [ChEBI]
 synonym: "caprynate" RELATED [ChEBI]
 synonym: "CH3-[CH2]8-COO(-)" RELATED [IUPAC]
-synonym: "decanoate" EXACT IUPAC_NAME [IUPAC]
 synonym: "decanoate" EXACT [UniProt]
+synonym: "decanoate" EXACT IUPAC_NAME [IUPAC]
 synonym: "decanoic acid anion" RELATED [ChEBI]
 synonym: "decoate" RELATED [ChEBI]
 synonym: "decylate" RELATED [ChEBI]
@@ -10263,8 +10253,8 @@ id: CHEBI:28659
 name: phosphorus atom
 synonym: "15P" RELATED [IUPAC]
 synonym: "fosforo" RELATED [ChEBI]
-synonym: "P" RELATED [IUPAC]
 synonym: "P" RELATED [KEGG_COMPOUND]
+synonym: "P" RELATED [IUPAC]
 synonym: "Phosphor" RELATED [ChEBI]
 synonym: "phosphore" RELATED [ChEBI]
 synonym: "Phosphorus" RELATED [KEGG_COMPOUND]
@@ -10311,8 +10301,8 @@ synonym: "cobre" RELATED [ChEBI]
 synonym: "Copper" RELATED [KEGG_COMPOUND]
 synonym: "copper" EXACT IUPAC_NAME [IUPAC]
 synonym: "copper" RELATED [ChEBI]
-synonym: "Cu" RELATED [ChEBI]
 synonym: "Cu" RELATED [IUPAC]
+synonym: "Cu" RELATED [ChEBI]
 synonym: "cuivre" RELATED [ChEBI]
 synonym: "cuprum" RELATED [IUPAC]
 synonym: "Kupfer" RELATED [ChEBI]
@@ -10545,7 +10535,6 @@ name: carbonic acid
 synonym: "[CO(OH)2]" RELATED [IUPAC]
 synonym: "Carbonic acid" EXACT [KEGG_COMPOUND]
 synonym: "carbonic acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonic acid" EXACT [UniProt]
 synonym: "Dihydrogen carbonate" RELATED [KEGG_COMPOUND]
 synonym: "dihydroxidooxidocarbon" EXACT IUPAC_NAME [IUPAC]
 synonym: "H2CO3" RELATED [KEGG_COMPOUND]
@@ -10560,12 +10549,12 @@ relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 id: CHEBI:28997
 name: 2'-deoxyinosine
 def: "A purine 2'-deoxyribonucleoside that is inosine in which the hydroxy group at position 2' is replaced by a hydrogen." []
-synonym: "2'-deoxyinosine" EXACT [UniProt]
 synonym: "2'-deoxyinosine" EXACT IUPAC_NAME [IUPAC]
+synonym: "2'-deoxyinosine" EXACT [UniProt]
 synonym: "9-(2-deoxy-beta-D-erythro-pentofuranosyl)-9H-purin-6-ol" RELATED [IUPAC]
 synonym: "9-[(2R,4S,5R)-4-hydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl]-9H-purin-6-ol" EXACT IUPAC_NAME [IUPAC]
-synonym: "Deoxyinosine" RELATED [KEGG_COMPOUND]
 synonym: "Deoxyinosine" RELATED [ChemIDplus]
+synonym: "Deoxyinosine" RELATED [KEGG_COMPOUND]
 is_a: CHEBI:142361 ! purines 2'-deoxy-D-ribonucleoside
 is_a: CHEBI:19254 ! purine 2'-deoxyribonucleoside
 relationship: has_functional_parent CHEBI:17596 ! inosine
@@ -10726,8 +10715,8 @@ is_a: CHEBI:36976 ! nucleotide
 id: CHEBI:29101
 name: sodium(1+)
 def: "A monoatomic monocation obtained from sodium." []
-synonym: "Na(+)" RELATED [IUPAC]
 synonym: "Na(+)" RELATED [UniProt]
+synonym: "Na(+)" RELATED [IUPAC]
 synonym: "Na+" RELATED [KEGG_COMPOUND]
 synonym: "sodium cation" EXACT IUPAC_NAME [IUPAC]
 synonym: "SODIUM ION" RELATED [PDBeChem]
@@ -11138,8 +11127,8 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 id: CHEBI:29864
 name: mannitol
 def: "A hexitol produced by a variety of organisms including bacteria, fungi, lichens and plants." []
-synonym: "mannitol" EXACT IUPAC_NAME [IUPAC]
 synonym: "mannitol" EXACT [UniProt]
+synonym: "mannitol" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:24583 ! hexitol
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: RO:0000087 CHEBI:76924 ! plant metabolite
@@ -11392,8 +11381,8 @@ synonym: "[nFe-xS]" RELATED [IUBMB]
 synonym: "Fe-S clusters" RELATED [IUBMB]
 synonym: "Iron-sulfur" RELATED [KEGG_COMPOUND]
 synonym: "Iron-sulfur cluster" EXACT [KEGG_COMPOUND]
-synonym: "iron-sulfur cluster" EXACT [UniProt]
 synonym: "iron-sulfur cluster" EXACT IUPAC_NAME [IUPAC]
+synonym: "iron-sulfur cluster" EXACT [UniProt]
 synonym: "iron-sulfur clusters" RELATED [ChEBI]
 is_a: CHEBI:25214 ! metal-sulfur cluster
 is_a: CHEBI:33892 ! iron coordination entity
@@ -11496,7 +11485,6 @@ synonym: "heptanedioic acid" EXACT IUPAC_NAME [IUPAC]
 synonym: "Pimelate" RELATED [KEGG_COMPOUND]
 synonym: "PIMELIC ACID" EXACT [PDBeChem]
 synonym: "Pimelic acid" EXACT [KEGG_COMPOUND]
-synonym: "pimelic acid" EXACT [UniProt]
 is_a: CHEBI:28383 ! alpha,omega-dicarboxylic acid
 relationship: is_conjugate_acid_of CHEBI:133773 ! pimelate
 relationship: is_conjugate_acid_of CHEBI:17774 ! pimelate(1-)
@@ -11781,7 +11769,6 @@ synonym: "2-Hydroxytricarballylic acid" RELATED [KEGG_COMPOUND]
 synonym: "3-Carboxy-3-hydroxypentane-1,5-dioic acid" RELATED [HMDB]
 synonym: "CITRIC ACID" EXACT [PDBeChem]
 synonym: "Citric acid" EXACT [KEGG_COMPOUND]
-synonym: "citric acid" EXACT [UniProt]
 synonym: "Citronensaeure" RELATED [ChEBI]
 synonym: "E330" RELATED [ChEBI]
 synonym: "H3cit" RELATED [IUPAC]
@@ -11808,7 +11795,6 @@ synonym: "Butanoate" RELATED [KEGG_COMPOUND]
 synonym: "BUTANOIC ACID" RELATED [PDBeChem]
 synonym: "Butanoic acid" RELATED [KEGG_COMPOUND]
 synonym: "butanoic acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "butanoic acid" RELATED [UniProt]
 synonym: "butoic acid" RELATED [ChEBI]
 synonym: "Buttersaeure" RELATED [ChEBI]
 synonym: "Butyric acid" EXACT [KEGG_COMPOUND]
@@ -12022,7 +12008,6 @@ synonym: "glucitol" EXACT IUPAC_NAME [IUPAC]
 synonym: "gulitol" RELATED [ChEBI]
 synonym: "rel-(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol" RELATED [IUPAC]
 synonym: "Sorbitol" RELATED [KEGG_COMPOUND]
-synonym: "sorbitol" RELATED [UniProt]
 is_a: CHEBI:24583 ! hexitol
 relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 
@@ -12058,8 +12043,8 @@ id: CHEBI:30928
 name: meso-tartrate(2-)
 synonym: "(2R,3S)-2,3-dihydroxybutanedioate" EXACT IUPAC_NAME [IUPAC]
 synonym: "(2R,3S)-2,3-dihydroxysuccinate" RELATED [ChEBI]
-synonym: "(2R,3S)-tartrate" RELATED [ChEBI]
 synonym: "(2R,3S)-tartrate" RELATED [UniProt]
+synonym: "(2R,3S)-tartrate" RELATED [ChEBI]
 synonym: "erythrarate" RELATED [ChEBI]
 is_a: CHEBI:30929 ! 2,3-dihydroxybutanedioate
 relationship: is_conjugate_base_of CHEBI:35400 ! meso-tartrate(1-)
@@ -13945,8 +13930,8 @@ synonym: "58Ce" RELATED [IUPAC]
 synonym: "Ce" RELATED [IUPAC]
 synonym: "Cer" RELATED [ChEBI]
 synonym: "cerio" RELATED [ChEBI]
-synonym: "cerium" EXACT [ChEBI]
 synonym: "cerium" EXACT IUPAC_NAME [IUPAC]
+synonym: "cerium" EXACT [ChEBI]
 synonym: "Zer" RELATED [ChEBI]
 is_a: CHEBI:33319 ! lanthanoid atom
 is_a: CHEBI:33562 ! f-block element atom
@@ -14746,8 +14731,8 @@ id: CHEBI:33704
 name: alpha-amino acid
 def: "An amino acid in which the amino group is located on the carbon atom at the position alpha to the carboxy group." []
 synonym: "alpha-amino acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "alpha-amino acids" RELATED [ChEBI]
 synonym: "alpha-amino acids" RELATED [JCBN]
+synonym: "alpha-amino acids" RELATED [ChEBI]
 synonym: "alpha-amino carboxylic acids" RELATED [IUPAC]
 synonym: "Amino acid" RELATED [KEGG_COMPOUND]
 synonym: "Amino acids" RELATED [KEGG_COMPOUND]
@@ -15126,7 +15111,6 @@ id: CHEBI:33856
 name: aromatic amino acid
 def: "An amino acid whose structure includes an aromatic ring." []
 synonym: "Aromatic amino acid" EXACT [KEGG_COMPOUND]
-synonym: "aromatic amino acid" EXACT [UniProt]
 synonym: "aromatic amino acids" RELATED [ChEBI]
 is_a: CHEBI:33659 ! organic aromatic compound
 is_a: CHEBI:33709 ! amino acid
@@ -15727,8 +15711,8 @@ is_a: CHEBI:73754 ! thiosugar
 id: CHEBI:35276
 name: ammonium compound
 def: "Compounds (NH4(+))Y(-) and derivatives, in which one or more of the hydrogens bonded to nitrogen have been replaced with univalent groups." []
-synonym: "ammonium compounds" RELATED [IUPAC]
 synonym: "ammonium compounds" RELATED [ChEBI]
+synonym: "ammonium compounds" RELATED [IUPAC]
 synonym: "azanium compounds" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:51143 ! nitrogen molecular entity
 relationship: BFO:0000051 CHEBI:35274 ! ammonium ion
@@ -18445,8 +18429,8 @@ name: oleanolic acid
 def: "A pentacyclic triterpenoid that is olean-12-en-28-oic acid substituted by a beta-hydroxy group at position 3." []
 synonym: "3beta-Hydroxyolean-12-en-28-oic acid" RELATED [KEGG_COMPOUND]
 synonym: "3beta-hydroxyolean-12-en-28-oic acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "Astrantiagenin C" RELATED [KEGG_COMPOUND]
 synonym: "Astrantiagenin C" RELATED [ChemIDplus]
+synonym: "Astrantiagenin C" RELATED [KEGG_COMPOUND]
 synonym: "Caryophyllin" RELATED [KEGG_COMPOUND]
 synonym: "Caryophyllin" RELATED [ChemIDplus]
 synonym: "Giganteumgenin C" RELATED [ChemIDplus]
@@ -20109,8 +20093,8 @@ synonym: "bromure d'hydrogene" RELATED [ChEBI]
 synonym: "Bromwasserstoff" RELATED [NIST_Chemistry_WebBook]
 synonym: "HBr" RELATED [KEGG_COMPOUND]
 synonym: "Hydrobromic acid" RELATED [KEGG_COMPOUND]
-synonym: "hydrogen bromide" EXACT [NIST_Chemistry_WebBook]
 synonym: "hydrogen bromide" EXACT IUPAC_NAME [IUPAC]
+synonym: "hydrogen bromide" EXACT [NIST_Chemistry_WebBook]
 synonym: "Hydrogenbromid" RELATED [ChEBI]
 is_a: CHEBI:138675 ! gas molecular entity
 is_a: CHEBI:18140 ! hydrogen halide
@@ -21799,6 +21783,11 @@ relationship: is_conjugate_base_of CHEBI:17334 ! penicillin
 id: CHEBI:51373
 name: GABA agonist
 def: "A drug that binds to and activates gamma-aminobutyric acid receptors." []
+synonym: "GABA agonists" RELATED [ChEBI]
+synonym: "GABA receptor agonist" RELATED [ChEBI]
+synonym: "GABA receptor agonists" RELATED [ChEBI]
+synonym: "gamma-aminobutyric acid receptor agonist" RELATED [ChEBI]
+synonym: "gamma-aminobutyric acid receptor agonists" RELATED [ChEBI]
 is_a: CHEBI:51374 ! GABA agent
 
 [Term]
@@ -22023,6 +22012,7 @@ id: CHEBI:52267
 name: 7-hydroxyflavonol
 def: "Any flavonol carrying a 7-hydroxy substituent." []
 synonym: "7-hydroxy-flavonols" RELATED [ChEBI]
+synonym: "a 7-O-hydroxy-flavonol" RELATED [UniProt]
 is_a: CHEBI:28802 ! flavonols
 relationship: is_conjugate_acid_of CHEBI:60090 ! 7-hydroxyflavon-3-olate
 
@@ -22991,8 +22981,8 @@ relationship: is_conjugate_base_of CHEBI:47968 ! N-acetylmuramic acid 6-phosphat
 id: CHEBI:58805
 name: c-di-GMP(2-)
 def: "Dianion of cyclic di-3',5'-guanylic acid." []
-synonym: "cyclic di-3',5'-guanylate" RELATED [UniProt]
 synonym: "cyclic di-3',5'-guanylate" RELATED [ChEBI]
+synonym: "cyclic di-3',5'-guanylate" RELATED [UniProt]
 synonym: "cyclic di-3',5'-guanylate dianion" RELATED [ChEBI]
 is_a: CHEBI:58945 ! organophosphate oxoanion
 relationship: is_conjugate_base_of CHEBI:49537 ! c-di-GMP
@@ -23351,7 +23341,6 @@ relationship: is_conjugate_base_of CHEBI:16498 ! N-acylneuraminic acid
 id: CHEBI:60090
 name: 7-hydroxyflavon-3-olate
 def: "Conjugate base of a 7-hydroxyflavonol compound arising from selective deprotonation of the 3-hydroxy group; major species at pH 7.3." []
-synonym: "a 7-O-hydroxy-flavonol" RELATED [UniProt]
 is_a: CHEBI:60038 ! flavonoid oxoanion
 relationship: is_conjugate_base_of CHEBI:52267 ! 7-hydroxyflavonol
 
@@ -23804,9 +23793,8 @@ id: CHEBI:62031
 name: polar amino acid zwitterion
 def: "Zwitterionic form of a polar amino acid having an anionic carboxy group and a protonated amino group." []
 synonym: "a polar amino acid" RELATED [UniProt]
-is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:35238 ! amino acid zwitterion
-is_a: CHEBI:50860 ! organic molecular entity
+relationship: is_tautomer_of CHEBI:26167 ! polar amino acid
 
 [Term]
 id: CHEBI:62049
@@ -27365,8 +27353,8 @@ synonym: "3,6-acridinediamine" RELATED [ChEBI]
 synonym: "acridine-3,6-diamine" EXACT IUPAC_NAME [IUPAC]
 synonym: "Proflavin" RELATED [ChemIDplus]
 synonym: "proflavina" RELATED INN [ChemIDplus]
-synonym: "proflavine" RELATED INN [WHO_MedNet]
 synonym: "proflavine" RELATED INN [ChEBI]
+synonym: "proflavine" RELATED INN [WHO_MedNet]
 synonym: "proflavinum" RELATED INN [ChemIDplus]
 is_a: CHEBI:51803 ! aminoacridines
 relationship: is_conjugate_base_of CHEBI:74711 ! 3,6-diaminoacridine(1+)
