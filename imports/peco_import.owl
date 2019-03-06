@@ -1,28 +1,138 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/peco.owl#"
+     xml:base="http://purl.obolibrary.org/obo/peco.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:obo="http://purl.obolibrary.org/obo/">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/bfo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/chebi_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/cl_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/clo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/efo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/peco_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/ncit_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/npo_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/obi_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/omit_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/omp_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/pato_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/sio_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/uberon_import.owl"/>
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MCO/imports/zeco_import.owl"/>
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/peco.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/peco/releases/2018-08-15/peco.owl"/>
+    </owl:Ontology>
+    
 
-    <!-- This is a placeholder, it will be regenerated when makefile is first executed -->
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PECO_0001036 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PECO_0001036">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical exposure (PECO:0007189) that induces stress.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical stress treatment (narrow)</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical stress exposure</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PECO_0001036"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical exposure (PECO:0007189) that induces stress.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PECO:cooperl</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PECO_0001037 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PECO_0001037">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PECO_0001036"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical stress exposure (PECO:0001036) involving use of oxidative stress-inducing chemicals.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oxidative stress treatment (narrow)</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oxidative stress exposure</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PECO_0001037"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical stress exposure (PECO:0001036) involving use of oxidative stress-inducing chemicals.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PECO:cooperl</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PECO_0001038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PECO_0001038">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PECO_0001036"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical stress exposure (PECO:0001036) involving use of osmotic stress-inducing chemicals.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">osmotic stress treatment (narrow)</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">osmotic stress exposure</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PECO_0001038"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical stress exposure (PECO:0001036) involving use of osmotic stress-inducing chemicals.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PECO:cooperl</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PECO_0007178 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PECO_0007178">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The treatment involving an exposure to a given pressure of the atmosphere at a given point. Its measurement can be expressed in several ways. One is in millibars. Another is in inches or millimeters of mercury (Hg).</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atmospheric pressure treatment (narrow)</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">barometric pressure (related)</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atmospheric pressure exposure</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PECO_0007178"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The treatment involving an exposure to a given pressure of the atmosphere at a given point. Its measurement can be expressed in several ways. One is in millibars. Another is in inches or millimeters of mercury (Hg).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gramene:pankaj_jaiswal</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+

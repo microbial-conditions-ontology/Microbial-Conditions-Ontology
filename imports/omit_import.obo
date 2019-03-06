@@ -1,3 +1,27 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: dev
+ontology: omit
+
+[Term]
+id: OMIT:0002104
+name: Anaerobiosis
+
+[Term]
+id: OMIT:0007298
+name: Gravitation
+
+[Term]
+id: OMIT:0015719
+name: Weightlessness
+is_a: OMIT:0018667 ! Hypogravity
+
+[Term]
+id: OMIT:0018665
+name: Gravity, Altered
+is_a: OMIT:0007298 ! Gravitation
+
+[Term]
+id: OMIT:0018667
+name: Hypogravity
+is_a: OMIT:0018665 ! Gravity, Altered
 

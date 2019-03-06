@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/MicrO.owl#"
+     xml:base="http://purl.obolibrary.org/obo/MicrO.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MicrO.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_59999 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_59999">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_60004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_60004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_59999"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0008152 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008152">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0044699 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044699">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0044710 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044710">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008152"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044699"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000067">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+        <oboInOwl:hasBroadSynonym>culture media</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>growth media</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>growth medium</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>media</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>medium</oboInOwl:hasBroadSynonym>
+        <rdfs:label>microbiological culture medium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044710"/>
+        <rdfs:label>prokaryotic metabolic process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000116 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000116">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60004"/>
+        <rdfs:label>chemical mixture, serving as microbiological medium ingredients</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000164 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000164">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000116"/>
+        <rdfs:label>organic chemical mixture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000167 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000167">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000164"/>
+        <rdfs:label>undefined organic chemical mixture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000170 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000170">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001370"/>
+        <rdfs:label>microbiological medium ingredient, derived from extracts of microbial organisms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000172 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000172">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000167"/>
+        <rdfs:label>microbiological medium ingredient, derived from extracts of proteinaceous material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000173 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000173">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000172"/>
+        <rdfs:label>microbiological medium ingredient, derived from chemical hydrolysis of protein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000174 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000174">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000172"/>
+        <rdfs:label>microbiological medium ingredient, derived from enzymatic hydrolysis of protein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000182 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000182">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001366"/>
+        <oboInOwl:hasNarrowSynonym>Bacto Tryptone</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Bacto-Tryptone</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Proteose Tryptone</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>tryptone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000184 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000184">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000173"/>
+        <rdfs:label>casamino acids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000201 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000201">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000170"/>
+        <rdfs:label>yeast extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000174"/>
+        <rdfs:label>microbiological medium ingredient, derived from enzymatic hydrolysis of milk protein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000558 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000558">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000067"/>
+        <oboInOwl:hasBroadSynonym>MacConkey medium</oboInOwl:hasBroadSynonym>
+        <rdfs:label>MacConkey agar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0000562 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0000562">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000067"/>
+        <rdfs:label>LB medium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0001366 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0001366">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000465"/>
+        <rdfs:label>casein hydrolysate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0001370 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0001370">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000167"/>
+        <rdfs:label>microbiological medium ingredient, derived from aqueous extracts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0001526 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0001526">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000115"/>
+        <rdfs:label>(an)aerobiosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0001528 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0001528">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001526"/>
+        <rdfs:label>anaerobiosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MICRO_0001531 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MICRO_0001531">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001526"/>
+        <rdfs:label>aerobiosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000047 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000047">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000079 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000079">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000067"/>
+        <rdfs:label xml:lang="en">DSMZ Medium 382</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+

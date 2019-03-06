@@ -1,3 +1,126 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2018-11-12
+ontology: pato
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0000001>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/PATO_0000001> (quality)\n\nSubClassOf(<http://purl.obolibrary.org/obo/PATO_0000001> owl:Thing)\n\n\n)
+
+[Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+synonym: "trait" EXACT []
+
+[Term]
+id: PATO:0000068
+name: qualitative
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0000069
+name: deviation(from_normal)
+def: "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." [PATOC:GVG]
+is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000146
+name: temperature
+def: "A physical quality of the thermal energy of a system." [PATOC:GVG]
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." [PATOC:GVG]
+synonym: "relational physical quality" EXACT []
+
+[Term]
+id: PATO:0001025
+name: pressure
+def: "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts." [PATOC:GVG]
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." [PATOC:GVG]
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity" EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001305
+name: increased temperature
+def: "A temperature which is relatively high." [PATOC:GVG]
+synonym: "high temperature" EXACT []
+synonym: "hot" EXACT []
+is_a: PATO:0000146 ! temperature
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001306
+name: decreased temperature
+def: "A temperature which is relatively low." [PATOC:GVG]
+synonym: "cold" EXACT []
+synonym: "low temperature" EXACT []
+is_a: PATO:0000146 ! temperature
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001396
+name: cellular quality
+def: "A monadic quality of continuant that exists at the cellular level of organisation." [PATOC:GVG]
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001488
+name: cellular motility
+def: "A cellular quality inhering in a cell by virtue of whether the bearer exhibits the ability to move spontaneously." [thefreedictionary.com:thefreedictionary.com]
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0002297
+name: decreased cellular motility
+def: "A cellular motility which is lower relative to the normal or average." [PATOC:GVG]
+is_a: PATO:0001488 ! cellular motility
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0002298
+name: increased cellular motility
+def: "A cellular motility which is higher relative to the normal or average." [PATOC:GVG]
+is_a: PATO:0001488 ! cellular motility
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0002300
+name: increased quality
+def: "A quality that has a value that is increased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0000001 ! quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002301
+name: decreased quality
+def: "A quality that has a value that is decreased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0000001 ! quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002303
+name: decreased object quality
+def: "A quality of an object that has a value that is decreased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002301 ! decreased quality
+
+[Term]
+id: PATO:0002305
+name: increased object quality
+def: "A quality of an object that has a value that is increased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002300 ! increased quality
 

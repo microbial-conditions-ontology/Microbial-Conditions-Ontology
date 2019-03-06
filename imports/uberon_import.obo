@@ -1,3 +1,78 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2018-11-25
+ontology: uberon
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
+
+[Term]
+id: UBERON:0000174
+name: excreta
+def: "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity" [GO:0007588, http://orcid.org/0000-0002-6601-2165]
+synonym: "excreted substance" EXACT []
+synonym: "excretion" RELATED [BTO:0000491]
+synonym: "portion of excreted substance" EXACT [FMA:9674]
+synonym: "waste substance" EXACT [AEO:0000184]
+
+[Term]
+id: UBERON:0000456
+name: secretion of exocrine gland
+def: "A portion of organism substance that is produced by exocrine glands." [http://orcid.org/0000-0002-6601-2165]
+synonym: "bodily secretion" EXACT [MESH:D012634]
+synonym: "exocrine gland fluid" RELATED []
+synonym: "exocrine gland fluid or secretion" RELATED []
+synonym: "exocrine gland fluid/secretion" EXACT [MA:0002504]
+synonym: "exocrine gland secretion" RELATED []
+synonym: "external secretion" RELATED [BTO:0002977]
+synonym: "secreted substance" EXACT []
+synonym: "secretion" BROAD [FMA:9675]
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0000463
+name: organism substance
+def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." [http://orcid.org/0000-0001-9114-8737]
+synonym: "body fluid or substance" EXACT [MA:0002450]
+synonym: "body substance" EXACT [FMA:9669]
+synonym: "organism substance" EXACT [CARO:0000004]
+synonym: "portion of body substance" EXACT [FMA:9669]
+synonym: "portion of organism substance" EXACT [ZFA:0001487]
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+def: "Anatomical entity that has mass." [http://orcid.org/0000-0001-9114-8737]
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000479
+name: tissue
+def: "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation." [CARO:0000043]
+synonym: "portion of tissue" EXACT [CARO:0000043]
+synonym: "simple tissue" NARROW [AEO:0000043]
+synonym: "tissue portion" EXACT []
+
+[Term]
+id: UBERON:0000912
+name: mucus
+def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." [http://en.wikipedia.org/wiki/Mucus]
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [FMA:62955, http://orcid.org/0000-0001-9114-8737]
+
+[Term]
+id: UBERON:0001088
+name: urine
+def: "Excretion that is the output of a kidney" [http://en.wikipedia.org/wiki/Urine, https://github.com/geneontology/go-ontology/issues/11025]
+is_a: UBERON:0000174 ! excreta
+
+[Term]
+id: UBERON:0006314
+name: bodily fluid
+def: "Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not." [http://en.wikipedia.org/wiki/Body_fluid, MESH:A12.207]
+synonym: "body fluid" EXACT [GAID:266]
+synonym: "fluid" BROAD []
 

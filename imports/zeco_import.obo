@@ -1,3 +1,50 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+ontology: zeco
+
+[Term]
+id: ZECO:0000187
+name: oxygen content
+
+[Term]
+id: ZECO:0000188
+name: hyperoxia
+is_a: ZECO:0000187 ! oxygen content
+
+[Term]
+id: ZECO:0000189
+name: hypoxia
+is_a: ZECO:0000187 ! oxygen content
+
+[Term]
+id: ZECO:0000200
+name: pH
+
+[Term]
+id: ZECO:0000201
+name: acidic
+def: "Experimental condition in which the pH of the water is lower than the pH of the controlled conditions." []
+is_a: ZECO:0000200 ! pH
+
+[Term]
+id: ZECO:0000202
+name: basic
+def: "Experimental condition in which the pH of the water is higher than the pH of the controlled conditions." []
+is_a: ZECO:0000200 ! pH
+
+[Term]
+id: ZECO:0000208
+name: radiation
+
+[Term]
+id: ZECO:0000209
+name: electromagnetic radiation
+is_a: ZECO:0000208 ! radiation
+
+[Term]
+id: ZECO:0000214
+name: ultraviolet light
+def: "Electromagnetic radiation with a wavelength from 10 nm to 400nm. Long-wavelength ultraviolet radiation can cause chemical reactions and causes many substances to glow or fluoresce." [https://en.wikipedia.org/wiki/Ultraviolet]
+synonym: "UV" EXACT []
+synonym: "UV light" EXACT []
+is_a: ZECO:0000209 ! electromagnetic radiation
 

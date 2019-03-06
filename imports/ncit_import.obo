@@ -1,3 +1,142 @@
 format-version: 1.2
-ontology: MCO/imports/bfo_import
+data-version: releases/2018-11-28
+ontology: ncit
+
+[Term]
+id: NCIT:C120538
+name: Cell Density
+def: "A measurement of the number of cells per unit volume or area." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETEST", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "CELLDENS" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETESTCD", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+
+[Term]
+id: NCIT:C120710
+name: Maximum Cell Density
+def: "The maximum value in a range of values that describe cell density." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Cell Density, Maximum" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETEST", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Cell Density, Maximum" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "CELLDMAX" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETESTCD", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Maximum Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C120538 ! Cell Density
+
+[Term]
+id: NCIT:C120711
+name: Minimum Cell Density
+def: "The minimum value in a range of values that describe cell density." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Cell Density, Minimum" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Cell Density, Minimum" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETEST", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "CELLDMIN" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETESTCD", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Minimum Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C120538 ! Cell Density
+
+[Term]
+id: NCIT:C120712
+name: Mean Cell Density
+def: "The arithmetic mean of a range of values that describe the cell density of an entity." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Cell Density, Mean" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Cell Density, Mean" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETEST", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "CELLDMN" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-OETESTCD", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Mean Cell Density" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C120538 ! Cell Density
+
+[Term]
+id: NCIT:C14187
+name: Bacteria
+def: "Unicellular, prokaryotic organisms that reproduce by cell division and usually have cell walls; can be shaped like spheres, rods or spirals and can be found in virtually any environment." [] {http://purl.obolibrary.org/obo/NCIT_P381="BioTech Life Science Dictionary", http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "BACTERIA" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000044123", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
+synonym: "Bacteria, Eubacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "Bacterium" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Bacterium" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "Bacterium" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Eubacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Eubacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+is_a: NCIT:C14250 ! Organism
+
+[Term]
+id: NCIT:C14206
+name: Escherichia coli
+def: "A common, gram negative gut bacterium that has been studied intensively by geneticists because of its small genome size, normal lack of pathogenicity, and ease of growth in the laboratory." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "E. coli" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "E. coli" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "ESCHERICHIA COLI" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "ESCHERICHIA COLI" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="UNII", http://purl.obolibrary.org/obo/NCIT_P385="514B9K0L10", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
+synonym: "Escherichia coli" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Escherichia coli" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Escherichia coli" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
+is_a: NCIT:C77208 ! Escherichia
+
+[Term]
+id: NCIT:C14250
+name: Organism
+def: "A living entity." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "BiologicEntity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG"}
+synonym: "Organism" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Organism" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "organism" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000046250", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
+synonym: "Organismal" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Organisms" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Taxon" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+
+[Term]
+id: NCIT:C18102
+name: Physical Phenomenon or Property
+def: "A natural phenomenon involving the physics of matter and energy." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Physical Phenomenon" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Physical Phenomenon or Property" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Physical Process" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Physical Property" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+
+[Term]
+id: NCIT:C25360
+name: Mutant
+def: "An altered form of an individual, organism, population, or genetic character that differs from the corresponding wild type due to one or more alterations (mutations)." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Mutant" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+
+[Term]
+id: NCIT:C62195
+name: Wild Type
+def: "The naturally-occurring, normal, non-mutated version of a gene or genome." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Wild Type" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Wild Type" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Wildtype" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "WT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+
+[Term]
+id: NCIT:C76196
+name: Proteobacteria
+def: "A taxonomic phylum within kingdom Bacteria consisting of gram-negative bacteria with an outer membrane mainly composed of lipopolysaccharides. The group is defined primarily in terms of ribosomal RNA sequences." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Proteobacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Purple Bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Purple Non-sulfur Bacteria" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C14187 ! Bacteria
+
+[Term]
+id: NCIT:C77208
+name: Escherichia
+def: "A genus of Gram-negative, non-spore forming, facultatively anaerobic, rod-shaped bacteria in the phylum Proteobacteria." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "ESCHERICHIA" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Escherichia" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C85932 ! Enterobacteriaceae
+
+[Term]
+id: NCIT:C85932
+name: Enterobacteriaceae
+def: "A taxonomic family of Gram-negative bacterium, which are found in water, soil or the gut, in the phylum Proteobacteria that includes the genera Aranicola, Buttiauxella, Cedecea, Cronobacter, Enterobacter and Citrobacter, among others." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Enterobacteraceae" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "ENTEROBACTERIACEAE" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Enterobacteriaceae" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C76196 ! Proteobacteria
+
+[Term]
+id: NCIT:C96144
+name: Flask
+def: "A container with a base wider than the narrow neck traditionally used for holding liquids." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Flask" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Flask" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="Stability", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
 
