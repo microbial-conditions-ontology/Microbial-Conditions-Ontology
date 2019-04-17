@@ -149,7 +149,7 @@ VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-synt
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(SRC)
-	robot verify -i $< --queries $(VQUERIES) -O reports/
+	$(ROBOT) verify -i $< --queries $(VQUERIES) -O reports/
 
 # ----------------------------------------
 # Sparql queries: Reports
@@ -158,4 +158,4 @@ sparql_test: $(SRC)
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
-	robot query -f tsv -i $< $(REPORT_ARGS)
+	$(ROBOT) query -f tsv -i $< $(REPORT_ARGS)
