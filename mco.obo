@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2019-02-15
+data-version: releases/2019-05-15
 ontology: mco
 property_value: http://purl.obolibrary.org/obo/createdBy "Citlalli Mejía Almonte\nVíctor Tierrafría\nManuel Camacho\nSocorro Castro Gama\nJulio Collado Vides" xsd:string
 property_value: MCO:0000382 "" xsd:string
@@ -53232,7 +53232,6 @@ property_value: IAO:0000111 "curator note" xsd:string
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "PERSON:Alan Ruttenberg" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
-is_metadata_tag: 1
 is_metadata_tag: true
 
 [Typedef]
@@ -53251,7 +53250,6 @@ property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
 property_value: IAO:0000119 GROUP:OBI:<http://purl.obfoundry.org/obo/obi> xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
-is_metadata_tag: 1
 is_metadata_tag: true
 
 [Typedef]
