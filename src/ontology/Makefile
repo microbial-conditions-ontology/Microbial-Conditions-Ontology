@@ -1,135 +1,399 @@
 # ----------------------------------------
+# Makefile for mco
+# Generated using ontology-starter-kit
+# ODK Version: v1.2.23
+# ----------------------------------------
+# <do not edit above this line>
+
+# ----------------------------------------
 # Standard Constants
 # ----------------------------------------
 # these can be overwritten on the command line
 
-OBO=http://purl.obolibrary.org/obo
-ONT=mco
-BASE=$(OBO)/$(ONT)
-SRC=$(ONT)-edit.owl
-RELEASEDIR=../..
-ROBOT= robot
-OWLTOOLS= owltools
-USECAT= --use-catalog
-SPARQLDIR = ../sparql
+URIBASE=                    http://purl.obolibrary.org/obo
+ONT=                        mco
+ONTBASE=                    $(URIBASE)/$(ONT)
+EDIT_FORMAT=                owl
+SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
+CATALOG=                    catalog-v001.xml
+ROBOT=                      robot --catalog $(CATALOG)
+RELEASEDIR=                 ../..
+REPORTDIR=                  reports
+TMPDIR=                     tmp
+SPARQLDIR =                 ../sparql
+REPORT_FAIL_ON =            none
+OBO_FORMAT_OPTIONS =        
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
+ODK_VERSION_MAKEFILE =      v1.2.23
+
+TODAY ?= $(shell date +%Y-%m-%d)
+OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
+VERSION=$(TODAY)
+ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
+# seed.txt contains all referenced entities
+IMPORTSEED=seed.txt
+SRCMERGED=tmp/merged-$(SRC)
+SIMPLESEED=simple_seed.txt
+PRESEED=tmp/pre_seed.txt
+
+FORMATS = $(sort  owl obo json owl)
+FORMATS_INCL_TSV = $(sort $(FORMAT) tsv)
+RELEASE_ARTEFACTS = $(sort  base full simple base full)
 
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports $(ONT).owl $(ONT).obo
-test: sparql_test all
-prepare_release: all
-	cp $(ONT).owl $(ONT).obo $(RELEASEDIR) &&\
-	mkdir -p $(RELEASEDIR)/imports &&\
-	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
-	git add $(RELEASEDIR)/imports/*{obo,owl} &&\
-	(test -f subsets/*owl && cp subsets/*{owl,obo} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
-	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+.PHONY: .FORCE
+all: odkversion all_imports all_main all_subsets sparql_test all_reports all_assets
+test: odkversion sparql_test all_reports
+	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed all --exclude-tautologies structural --output test.owl && rm test.owl && echo "Success"
+
+odkversion:
+	echo "ODK Makefile version: $(ODK_VERSION_MAKEFILE) (this is the version of the ODK with which this Makefile was generated, not the version of the ODK you are running)" &&\
+	echo "ROBOT version (ODK): " && $(ROBOT) --version
+
+$TMPDIR:
+	mkdir -p $@
+
+## -- main targets --
+##
+## By default this is the cross-product of {ont, ont-base} x FORMATS
+
+MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(ONT)-$(r)) $(ONT))
+MAIN_GZIPPED = 
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
+
+all_main: $(MAIN_FILES)
+
+## -- import targets --
+##
+## By default this is the cross-product of IMPORT_MODULES x FORMATS
+
+
+IMPORTS =  bfo chebi cl clo peco ncit obi omit omp pato uberon zeco micro ncbitaxon ro
+
+IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
+IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
+IMPORT_FILES = $(IMPORT_OWL_FILES)
+
+
+all_imports: $(IMPORT_FILES)
+
+## -- subset targets --
+##
+## By default this is the cross-product of SUBSETS x FORMATS
+## Note we also include TSV as a format
+
+
+SUBSETS = 
+
+SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
+
+all_subsets: $(SUBSET_FILES)
+
+OBO_REPORT = $(SRC)-obo-report
+REPORTS = $(OBO_REPORT)
+REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
+
+all_reports: all_reports_onestep $(REPORT_FILES)
+
+## -- all files/assets --
+
+ASSETS = \
+  $(IMPORT_FILES) \
+  $(MAIN_FILES) \
+  $(REPORT_FILES) \
+  $(SUBSET_FILES)
+
+all_assets: $(ASSETS)
+
+show_assets:
+	echo $(ASSETS)
+	du -sh $(ASSETS)
+
 
 # ----------------------------------------
-# Main release targets
+# Release Management
 # ----------------------------------------
 
-# by default we use Elk to perform a reason-relax-reduce chain
-# after that we annotate the ontology with the release versionInfo
-$(ONT).owl: $(SRC)
-	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+KEEPRELATIONS=keeprelations.txt
+ONTOLOGYTERMS=ontologyterms.txt
+
+# This should be executed by the release manager whenever time comes to make a release.
+# It will ensure that all assets/files are fresh, and will copy to release folder
+prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
+	rsync -R $(ASSETS) $(RELEASEDIR) &&\
+  rm -f $(MAIN_FILES) $(SRCMERGED) &&\
+  echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab"
+
+prepare_initial_release: prepare_release
+	cd $(RELEASEDIR) && git add $(ASSETS)
+
+# ----------------------------------------
+# Export formats
+# ----------------------------------------
+
+
+$(ONT)-base.obo: $(ONT)-base.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT)-base.json: $(ONT)-base.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+$(ONT)-full.obo: $(ONT)-full.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT)-full.json: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+$(ONT)-simple.obo: $(ONT)-simple.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT)-simple.json: $(ONT)-simple.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+# Main release artefacts
+$(ONT).owl: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
 $(ONT).obo: $(ONT).owl
-	$(ROBOT) convert --check false -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT).json: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+# ----------------------------------------
+# Initiating Step: Reason over source
+# ----------------------------------------
 
+# by default we use ELK to perform a reason-relax-reduce chain
+# after that we annotate the ontology with the release versionInfo
+
+OTHER_SRC =  
+
+
+$(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
+	touch $(ONTOLOGYTERMS) && \
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/mco_terms.sparql $@
+
+
+
+
+
+
+
+
+
+
+# base: OTHER sources of interest, such as definitions owl
+$(ONT)-base.owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) remove --input $< --select imports --trim false \
+		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
+
+# Full: The full artefacts with imports merged, reasoned
+$(ONT)-full.owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) merge --input $< \
+		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		relax \
+		reduce -r ELK \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+# foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
+# drop every axiom: filter --term-file keep_terms.txt --trim true
+#	remove --select imports --trim false \
+
+$(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED)
+	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) \
+		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce -r ELK \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 # ----------------------------------------
 # Import modules
 # ----------------------------------------
 # Most ontologies are modularly constructed using portions of other ontologies
 # These live in the imports/ folder
-# These can be regenerated with make all_imports
 
-IMPORTS = bfo chebi cl clo peco ncit obi omit omp pato uberon zeco micro ncbitaxon
-IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
+$(SRCMERGED): $(SRC)
+	$(ROBOT) remove --input $< --select imports --trim false \
+		merge  $(patsubst %, -i %, $(OTHER_SRC)) -o $@
 
-# Make this target to regenerate ALL
-all_imports: $(IMPORTS_OWL)
-export ROBOT_JAVA_ARGS=-Xmx6G
-# Use ROBOT, driven entirely by terms lists NOT from source ontology
+$(PRESEED): $(SRCMERGED)
+	$(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
 
-imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt imports/ncbitaxon_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/ncbitaxon_upper_terms.txt -L imports/ncbitaxon_terms.txt -O $(BASE)/$@ -o $@
+$(SIMPLESEED): $(SRCMERGED) $(ONTOLOGYTERMS)
+	$(ROBOT) query -f csv -i $< --query ../sparql/simple-seed.sparql $@.tmp &&\
+	cat $@.tmp $(ONTOLOGYTERMS) | sort | uniq >  $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SubsetProperty" >> $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty" >> $@
+
+
+$(IMPORTSEED): $(PRESEED)
+	@if [ $(IMP) = true ]; then cat $(PRESEED) | sort | uniq > $@; fi
+
+
+# Generate terms.txt for each import.  (Assume OBO-style Possibly hacky step?)
+# Should be able to drop this if robot can just take a big messy list of terms as input.
+
+imports/%_terms_combined.txt: $(IMPORTSEED) imports/%_terms.txt
+	@if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
+
+# -- Generate Import Modules --
+#
+# This pattern uses ROBOT to generate an import module
+# imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
+# 	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+# 		query --update ../sparql/inject-subset-declaration.ru \
+# 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+# .PRECIOUS: imports/%_import.owl
+
+imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method MIREOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/ncbitaxon_import.owl
 
-imports/micro_import.owl: mirror/micro.owl imports/micro_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -L imports/micro_terms.txt -O $(BASE)/$@ -o $@
+imports/micro_import.owl: mirror/micro.owl imports/micro_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method MIREOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/micro_import.owl
 
-imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms.txt
-	$(ROBOT) extract -i $< -T imports/chebi_terms.txt --method BOT -O $(BASE)/$@ -o $@
+imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/chebi_import.owl
 
-imports/bfo_import.owl: mirror/bfo.owl imports/bfo_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -L imports/bfo_terms.txt -O $(BASE)/$@ -o $@
+imports/bfo_import.owl: mirror/bfo.owl imports/bfo_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/bfo_import.owl
 
-imports/cl_import.owl: mirror/cl.owl imports/cl_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/cl_terms.txt -L imports/cl_terms.txt -O $(BASE)/$@ -o $@
+imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/cl_import.owl
 
-imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt imports/clo_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/clo_upper_terms.txt -L imports/clo_terms.txt -O $(BASE)/$@ -o $@
-.PRECIOUS: imports/cl_import.owl
+imports/clo_import.owl: mirror/clo.owl imports/clo_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/clo_import.owl
 
-imports/efo_import.owl: mirror/efo.owl imports/efo_terms.txt imports/efo_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/efo_upper_terms.txt -L imports/efo_terms.txt -O $(BASE)/$@ -o $@
+imports/efo_import.owl: mirror/efo.owl imports/efo_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/efo_import.owl
 
-imports/peco_import.owl: mirror/peco.owl imports/peco_terms.txt imports/peco_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/peco_upper_terms.txt -L imports/peco_terms.txt -O $(BASE)/$@ -o $@
-.PRECIOUS: imports/eo_import.owl
+imports/peco_import.owl: mirror/peco.owl imports/peco_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/peco_import.owl
 
-imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms.txt imports/ncit_upper_terms.txt
-	$(ROBOT)  extract -i $< --method MIREOT -U imports/ncit_upper_terms.txt -L imports/ncit_terms.txt -O $(BASE)/$@ -o $@
+imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/ncit_import.owl
 
-imports/npo_import.owl: mirror/npo.owl imports/npo_terms.txt imports/npo_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/npo_upper_terms.txt -L imports/npo_terms.txt -O $(BASE)/$@ -o $@
+imports/npo_import.owl: mirror/npo.owl imports/npo_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/npo_import.owl
 
-imports/obi_import.owl: mirror/obi.owl imports/obi_terms.txt imports/obi_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/obi_upper_terms.txt -L imports/obi_terms.txt -O $(BASE)/$@ -o $@
+imports/obi_import.owl: mirror/obi.owl imports/obi_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/obi_import.owl
 
-imports/omit_import.owl: mirror/omit.owl imports/omit_terms.txt imports/omit_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/omit_upper_terms.txt -L imports/omit_terms.txt -O $(BASE)/$@ -o $@
+imports/omit_import.owl: mirror/omit.owl imports/omit_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omit_import.owl
 
-imports/omp_import.owl: mirror/omp.owl imports/omp_terms.txt imports/omp_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/omp_upper_terms.txt -L imports/omp_terms.txt -O $(BASE)/$@ -o $@
+imports/omp_import.owl: mirror/omp.owl imports/omp_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omp_import.owl
 
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms.txt imports/pato_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/pato_upper_terms.txt -L imports/pato_terms.txt -O $(BASE)/$@ -o $@
+imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/pato_import.owl
 
-imports/sio_import.owl: mirror/sio.owl imports/sio_terms.txt imports/sio_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/sio_upper_terms.txt -L imports/sio_terms.txt -O $(BASE)/$@ -o $@
+imports/sio_import.owl: mirror/sio.owl imports/sio_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/sio_import.owl
 
-imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms.txt imports/uberon_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/uberon_upper_terms.txt -L imports/uberon_terms.txt -O $(BASE)/$@ -o $@
+imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/uberon_import.owl
 
-imports/zeco_import.owl: mirror/zeco.owl imports/zeco_terms.txt imports/zeco_upper_terms.txt
-	$(ROBOT) extract -i $< --method MIREOT -U imports/zeco_upper_terms.txt -L imports/zeco_terms.txt -O $(BASE)/$@ -o $@
+imports/zeco_import.owl: mirror/zeco.owl imports/zeco_terms_combined.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/zeco_import.owl
 
-# we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
+# convert imports to obo.
+# this can be useful for spot-checks and diffs.
+# we set strict mode to false by default. For discussion see https://github.com/owlcs/owlapi/issues/752
 imports/%_import.obo: imports/%_import.owl
-#	$(OWLTOOLS) $(USECAT) $< -o -f obo $@
-	$(ROBOT) convert --check false -i $< -o $@ --format obo # trying to use robot instead of owltools to avoid error "multiple def tags not allowed"
+	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f obo -o $@.tmp.obo && mv $@.tmp.obo $@; fi
+imports/%_import.json: imports/%_import.owl
+	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f json -o $@.tmp.json && mv $@.tmp.json $@; fi
 
-# clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: $(SRC)
-	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations  -o $@
+
+# ----------------------------------------
+# Mirroring upstream ontologies
+# ----------------------------------------
+#
+
+IMP=true # Global parameter to bypass import generation
+MIR=true # Global parameter to bypass mirror generation
+
+
+## ONTOLOGY: ro
+## Copy of ro is re-downloaded whenever source changes
+mirror/ro.trigger: $(SRC)
+
+mirror/ro.owl: mirror/ro.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
 .PRECIOUS: mirror/%.owl
+
+
+
+# ----------------------------------------
+# Subsets
+# ----------------------------------------
+subsets/%.tsv: subsets/%.owl
+	$(ROBOT) query -f tsv -i $< -s ../sparql/labels.sparql $@
+subsets/%.owl: $(ONT).owl
+	owltools --use-catalog $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@
+
 
 # ----------------------------------------
 # Release
@@ -143,19 +407,40 @@ release: $(ONT).owl $(ONT).obo
 # ----------------------------------------
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
-# adding the name here will make the violation check live
-VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+# adding the name here will make the violation check live.
+# NOTE: these will soon be phased out and replaced by robot-report
 
-# run all violation checks
-VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
+#  run all violation checks
+SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(SRC)
-	$(ROBOT) verify -i $< --queries $(VQUERIES) -O reports/
+	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
 
 # ----------------------------------------
-# Sparql queries: Reports
+# ROBOT report
+# ----------------------------------------
+reports/%-obo-report.tsv: %
+	$(ROBOT) report -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+
+# ----------------------------------------
+# Sparql queries: Exports
 # ----------------------------------------
 
-REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms
-REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
-all_reports: $(SRC)
-	$(ROBOT) query -f tsv -i $< $(REPORT_ARGS)
+SPARQL_EXPORTS_ARGS = $(foreach V,$(SPARQL_EXPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
+# This combines all into one single command
+all_reports_onestep: $(SRC)
+	$(ROBOT) query -f tsv -i $< $(SPARQL_EXPORTS_ARGS)
+
+
+# ----------------------------------------
+# Docker (experimental)
+# ----------------------------------------
+IM=build-$(ONT)
+build-docker:
+	docker build -t $(ONT) .
+
+
+
+update_repo:
+	sh ../scripts/update_repo.sh
+
+include mco.Makefile
