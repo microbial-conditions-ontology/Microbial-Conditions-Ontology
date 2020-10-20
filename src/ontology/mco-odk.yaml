@@ -1,0 +1,24 @@
+id: mco
+title: "microbial conditions ontology"
+github_org: microbial-conditions-ontology
+repo: Microbial-Conditions-Ontology
+report_fail_on: none
+namespaces: 
+  - http://purl.obolibrary.org/obo/MCO_
+license: CC-BY
+description: "Ontology that provides a controlled vocabulary for the description of microbial growth conditions"
+release_artefacts: 
+  - base
+  - full
+  - simple
+primary_release: full
+export_formats:
+  - owl
+  - obo
+  - json
+import_group:
+  products:
+    - id: ro
+robot_java_args: '-Xmx8G'
+
+edit_format: owl

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/MicrO.owl" uri="src/ontology/imports/micro_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/bfo.owl" uri="src/ontology/imports/bfo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/chebi.owl" uri="src/ontology/mirror/chebi.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/cl.owl" uri="src/ontology/imports/cl_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/clo.owl" uri="src/ontology/imports/clo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/mco.owl" uri="mco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/mco.owl/" uri="src/ontology/mco-edit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/mco/imports/chebi_import.owl" uri="src/ontology/imports/chebi_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="duplicate:http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl" uri="imports/efo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="duplicate:http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl" uri="imports/npo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/ncbitaxon.owl" uri="src/ontology/imports/ncbitaxon_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/ncit.owl" uri="src/ontology/imports/ncit_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/obi.owl" uri="src/ontology/imports/obi_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/omit.owl" uri="src/ontology/imports/omit_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/omp.owl" uri="src/ontology/imports/omp_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/pato.owl" uri="src/ontology/imports/pato_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/peco.owl" uri="src/ontology/imports/peco_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/uberon.owl" uri="src/ontology/imports/uberon_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="http://purl.obolibrary.org/obo/zeco.owl" uri="src/ontology/imports/zeco_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="duplicate:http://www.w3.org/2002/07/owl" uri="src/ontology/mirror/sio.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="duplicate:http://www.w3.org/2002/07/owl" uri="src/ontology/mirror/npo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/MicrO.owl" uri="src/ontology/mirror/micro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/MicrO.owl" uri="imports/micro_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/bfo.owl" uri="src/ontology/mirror/bfo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/bfo.owl" uri="imports/bfo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/cl.owl" uri="src/ontology/mirror/cl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/cl.owl" uri="imports/cl_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/clo.owl" uri="src/ontology/mirror/clo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/clo.owl" uri="imports/clo_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/mco.owl" uri="src/ontology/mco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/mco/imports/chebi_import.owl" uri="imports/chebi_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/ncbitaxon.owl" uri="src/ontology/mirror/ncbitaxon.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/ncbitaxon.owl" uri="imports/ncbitaxon_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/ncit.owl" uri="src/ontology/mirror/ncit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/ncit.owl" uri="imports/ncit_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/obi.owl" uri="src/ontology/mirror/obi.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/obi.owl" uri="imports/obi_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/omit.owl" uri="src/ontology/mirror/omit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/omit.owl" uri="imports/omit_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/omp.owl" uri="src/ontology/mirror/omp.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/omp.owl" uri="imports/omp_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/pato.owl" uri="src/ontology/mirror/pato.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/pato.owl" uri="imports/pato_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/peco.owl" uri="src/ontology/mirror/peco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/peco.owl" uri="imports/peco_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/uberon.owl" uri="src/ontology/mirror/uberon.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/uberon.owl" uri="imports/uberon_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/zeco.owl" uri="src/ontology/mirror/zeco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1551855736736" name="shadowed:http://purl.obolibrary.org/obo/zeco.owl" uri="imports/zeco_import.owl"/>
+    </group>
+</catalog>

@@ -1,0 +1,6 @@
+http://purl.obolibrary.org/obo/CC-BY
+http://purl.obolibrary.org/obo/MCO_00000000
+http://purl.obolibrary.org/obo/mco.owl
+http://www.w3.org/2002/07/owl#Class
+http://www.w3.org/2002/07/owl#Ontology
+term
