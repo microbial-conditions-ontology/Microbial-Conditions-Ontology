@@ -1,7 +1,7 @@
 # ----------------------------------------
 # Makefile for mco
 # Generated using ontology-starter-kit
-# ODK Version: v1.2.23
+# ODK Version: v1.2.24
 # ----------------------------------------
 # <do not edit above this line>
 
@@ -25,7 +25,7 @@ REPORT_FAIL_ON =            none
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
-ODK_VERSION_MAKEFILE =      v1.2.23
+ODK_VERSION_MAKEFILE =      v1.2.24
 
 TODAY ?= $(shell date +%Y-%m-%d)
 OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
@@ -249,113 +249,11 @@ imports/%_terms_combined.txt: $(IMPORTSEED) imports/%_terms.txt
 # -- Generate Import Modules --
 #
 # This pattern uses ROBOT to generate an import module
-# imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
-# 	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-# 		query --update ../sparql/inject-subset-declaration.ru \
-# 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-# .PRECIOUS: imports/%_import.owl
-
-imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method MIREOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/ncbitaxon_import.owl
-
-imports/micro_import.owl: mirror/micro.owl imports/micro_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method MIREOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/micro_import.owl
-
-imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt
+imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/chebi_import.owl
-
-imports/bfo_import.owl: mirror/bfo.owl imports/bfo_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/bfo_import.owl
-
-imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/cl_import.owl
-
-imports/clo_import.owl: mirror/clo.owl imports/clo_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/clo_import.owl
-
-imports/efo_import.owl: mirror/efo.owl imports/efo_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/efo_import.owl
-
-imports/peco_import.owl: mirror/peco.owl imports/peco_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/peco_import.owl
-
-imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/ncit_import.owl
-
-imports/npo_import.owl: mirror/npo.owl imports/npo_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/npo_import.owl
-
-imports/obi_import.owl: mirror/obi.owl imports/obi_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/obi_import.owl
-
-imports/omit_import.owl: mirror/omit.owl imports/omit_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/omit_import.owl
-
-imports/omp_import.owl: mirror/omp.owl imports/omp_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/omp_import.owl
-
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pato_import.owl
-
-imports/sio_import.owl: mirror/sio.owl imports/sio_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/sio_import.owl
-
-imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/uberon_import.owl
-
-imports/zeco_import.owl: mirror/zeco.owl imports/zeco_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/zeco_import.owl
+.PRECIOUS: imports/%_import.owl
 
 # convert imports to obo.
 # this can be useful for spot-checks and diffs.
@@ -373,6 +271,146 @@ imports/%_import.json: imports/%_import.owl
 
 IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
+
+
+## ONTOLOGY: bfo
+## Copy of bfo is re-downloaded whenever source changes
+mirror/bfo.trigger: $(SRC)
+
+mirror/bfo.owl: mirror/bfo.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/bfo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: chebi
+## Copy of chebi is re-downloaded whenever source changes
+mirror/chebi.trigger: $(SRC)
+
+mirror/chebi.owl: mirror/chebi.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: cl
+## Copy of cl is re-downloaded whenever source changes
+mirror/cl.trigger: $(SRC)
+
+mirror/cl.owl: mirror/cl.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/cl.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: clo
+## Copy of clo is re-downloaded whenever source changes
+mirror/clo.trigger: $(SRC)
+
+mirror/clo.owl: mirror/clo.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/clo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: peco
+## Copy of peco is re-downloaded whenever source changes
+mirror/peco.trigger: $(SRC)
+
+mirror/peco.owl: mirror/peco.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/peco.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: ncit
+## Copy of ncit is re-downloaded whenever source changes
+mirror/ncit.trigger: $(SRC)
+
+mirror/ncit.owl: mirror/ncit.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ncit.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: obi
+## Copy of obi is re-downloaded whenever source changes
+mirror/obi.trigger: $(SRC)
+
+mirror/obi.owl: mirror/obi.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/obi.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: omit
+## Copy of omit is re-downloaded whenever source changes
+mirror/omit.trigger: $(SRC)
+
+mirror/omit.owl: mirror/omit.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/omit.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: omp
+## Copy of omp is re-downloaded whenever source changes
+mirror/omp.trigger: $(SRC)
+
+mirror/omp.owl: mirror/omp.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/omp.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: pato
+## Copy of pato is re-downloaded whenever source changes
+mirror/pato.trigger: $(SRC)
+
+mirror/pato.owl: mirror/pato.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: uberon
+## Copy of uberon is re-downloaded whenever source changes
+mirror/uberon.trigger: $(SRC)
+
+mirror/uberon.owl: mirror/uberon.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/uberon.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: zeco
+## Copy of zeco is re-downloaded whenever source changes
+mirror/zeco.trigger: $(SRC)
+
+mirror/zeco.owl: mirror/zeco.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/zeco.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: micro
+## Copy of micro is re-downloaded whenever source changes
+mirror/micro.trigger: $(SRC)
+
+mirror/micro.owl: mirror/micro.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/micro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: ncbitaxon
+## Copy of ncbitaxon is re-downloaded whenever source changes
+mirror/ncbitaxon.trigger: $(SRC)
+
+mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: mirror/%.owl
 
 
 ## ONTOLOGY: ro
