@@ -18,7 +18,24 @@ export_formats:
   - json
 import_group:
   products:
+    - id: bfo
+    - id: chebi
+      mirror_from: http://purl.obolibrary.org/obo/chebi.owl.gz
+    - id: cl
+    - id: clo
+    - id: peco
+    - id: ncit
+    - id: obi
+    - id: omit
+    - id: omp
+    - id: pato
+    - id: uberon
+    - id: zeco
+    - id: micro
+    - id: ncbitaxon
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: ro
+
 robot_java_args: '-Xmx8G'
 
 edit_format: owl
