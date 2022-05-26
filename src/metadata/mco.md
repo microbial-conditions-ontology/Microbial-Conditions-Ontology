@@ -15,6 +15,9 @@ contact:
 description: Microbial Conditions Ontology is an ontology...
 domain: experimental conditions
 homepage: https://github.com/microbial-conditions-ontology/microbial-conditions-ontology
+publication:
+  - id: https://pubmed.ncbi.nlm.nih.gov/30137210/
+  - title: "MCO: towards an ontology and unified vocabulary for a framework-based annotation of microbial growth conditions"
 products:
   - id: mco.owl
   - id: mco.obo
@@ -36,7 +39,7 @@ dependencies:
 tracker: https://github.com/microbial-conditions-ontology/microbial-conditions-ontology/issues
 license:
   url: http://creativecommons.org/licenses/by/3.0/
-  label: CC-BY
+  label: CC-BY 3.0
 ---
 
 Enter a detailed description of your ontology here
