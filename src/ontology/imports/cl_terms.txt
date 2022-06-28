@@ -2,3 +2,6 @@ http://purl.obolibrary.org/obo/CL_0000066
 
 # new term by citlalli doing test
 http://purl.obolibrary.org/obo/CL_0002321
+
+# collar cell 
+http://purl.obolibrary.org/obo/CL_0010016
