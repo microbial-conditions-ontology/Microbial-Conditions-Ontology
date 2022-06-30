@@ -2464,10 +2464,12 @@ http://purl.obolibrary.org/obo/CHEBI_9908
 http://purl.obolibrary.org/obo/CLO_0003707
 http://purl.obolibrary.org/obo/CL_0000000
 http://purl.obolibrary.org/obo/CL_0000003
+http://purl.obolibrary.org/obo/CL_0000064
 http://purl.obolibrary.org/obo/CL_0000066
 http://purl.obolibrary.org/obo/CL_0000255
 http://purl.obolibrary.org/obo/CL_0000548
 http://purl.obolibrary.org/obo/CL_0002321
+http://purl.obolibrary.org/obo/CL_0010016
 http://purl.obolibrary.org/obo/GO_0008150
 http://purl.obolibrary.org/obo/GO_0008152
 http://purl.obolibrary.org/obo/GO_0044699
