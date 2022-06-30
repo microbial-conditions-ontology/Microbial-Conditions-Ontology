@@ -3354,6 +3354,7 @@ http://purl.obolibrary.org/obo/MICRO_0001526
 http://purl.obolibrary.org/obo/MICRO_0001528
 http://purl.obolibrary.org/obo/MICRO_0001531
 http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316
+http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank
 http://purl.obolibrary.org/obo/NCBITaxon_1
 http://purl.obolibrary.org/obo/NCBITaxon_1110693
 http://purl.obolibrary.org/obo/NCBITaxon_1211845
@@ -3365,6 +3366,8 @@ http://purl.obolibrary.org/obo/NCBITaxon_1318715
 http://purl.obolibrary.org/obo/NCBITaxon_1403831
 http://purl.obolibrary.org/obo/NCBITaxon_1420014
 http://purl.obolibrary.org/obo/NCBITaxon_2
+http://purl.obolibrary.org/obo/NCBITaxon_216597
+http://purl.obolibrary.org/obo/NCBITaxon_28901
 http://purl.obolibrary.org/obo/NCBITaxon_316385
 http://purl.obolibrary.org/obo/NCBITaxon_316407
 http://purl.obolibrary.org/obo/NCBITaxon_511145
@@ -3373,9 +3376,12 @@ http://purl.obolibrary.org/obo/NCBITaxon_531853
 http://purl.obolibrary.org/obo/NCBITaxon_543
 http://purl.obolibrary.org/obo/NCBITaxon_561
 http://purl.obolibrary.org/obo/NCBITaxon_562
+http://purl.obolibrary.org/obo/NCBITaxon_590
+http://purl.obolibrary.org/obo/NCBITaxon_59201
 http://purl.obolibrary.org/obo/NCBITaxon_595496
 http://purl.obolibrary.org/obo/NCBITaxon_679895
 http://purl.obolibrary.org/obo/NCBITaxon_83333
+http://purl.obolibrary.org/obo/NCBITaxon_90371
 http://purl.obolibrary.org/obo/NCBITaxon_91347
 http://purl.obolibrary.org/obo/NCBITaxon_class
 http://purl.obolibrary.org/obo/NCBITaxon_family
@@ -3383,6 +3389,8 @@ http://purl.obolibrary.org/obo/NCBITaxon_genus
 http://purl.obolibrary.org/obo/NCBITaxon_order
 http://purl.obolibrary.org/obo/NCBITaxon_phylum
 http://purl.obolibrary.org/obo/NCBITaxon_species
+http://purl.obolibrary.org/obo/NCBITaxon_strain
+http://purl.obolibrary.org/obo/NCBITaxon_subspecies
 http://purl.obolibrary.org/obo/NCBITaxon_superkingdom
 http://purl.obolibrary.org/obo/NCIT_A11
 http://purl.obolibrary.org/obo/NCIT_A8
@@ -3657,6 +3665,7 @@ http://semanticscience.org/resource/subset
 http://uri.neuinfo.org/nif/nifstd/birnlex_19
 http://uri.neuinfo.org/nif/nifstd/birnlex_20
 http://www.geneontology.org/formats/oboInOwl#SubsetProperty
+http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty
 http://www.geneontology.org/formats/oboInOwl#created_by
 http://www.geneontology.org/formats/oboInOwl#creation_date
 http://www.geneontology.org/formats/oboInOwl#external_ontology
@@ -3667,6 +3676,7 @@ http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
 http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym
 http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
 http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+http://www.geneontology.org/formats/oboInOwl#hasScope
 http://www.geneontology.org/formats/oboInOwl#hasSynonymType
 http://www.geneontology.org/formats/oboInOwl#id
 http://www.geneontology.org/formats/oboInOwl#inSubset

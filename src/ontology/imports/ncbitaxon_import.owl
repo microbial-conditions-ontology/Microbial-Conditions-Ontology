@@ -1335,6 +1335,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_909946 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_909946">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_90371"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_strain"/>
+        <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21478351</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Salmonella enterica subsp. enterica serovar Typhimurium strain ST4/74</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Salmonella enterica subsp. enterica serovar Typhimurium str. 4/74</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_909946"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Salmonella enterica subsp. enterica serovar Typhimurium strain ST4/74</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#equivalent_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_909946"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Salmonella enterica subsp. enterica serovar Typhimurium str. 4/74</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_91347 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_91347">
@@ -1432,6 +1459,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank"/>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <rdfs:label>species</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_subspecies -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_subspecies">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <rdfs:label>subspecies</rdfs:label>
     </owl:Class>
     
 
