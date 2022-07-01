@@ -20,6 +20,6 @@ http://purl.obolibrary.org/obo/NCBITaxon_1114957
 #Salmonella enterica subsp. enterica serovar Typhimurium str. LT2
 http://purl.obolibrary.org/obo/NCBITaxon_99287
 #Shigella flexneri 5a str. M90T
-#http://purl.obolibrary.org/obo/NCBITaxon_1086030
+http://purl.obolibrary.org/obo/NCBITaxon_1086030
 #Streptomyces coelicolor A3(2)
 #http://purl.obolibrary.org/obo/NCBITaxon_100226
