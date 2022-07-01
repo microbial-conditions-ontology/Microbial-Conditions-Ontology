@@ -22,4 +22,4 @@ http://purl.obolibrary.org/obo/NCBITaxon_99287
 #Shigella flexneri 5a str. M90T
 http://purl.obolibrary.org/obo/NCBITaxon_1086030
 #Streptomyces coelicolor A3(2)
-#http://purl.obolibrary.org/obo/NCBITaxon_100226
+http://purl.obolibrary.org/obo/NCBITaxon_100226

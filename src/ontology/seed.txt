@@ -3356,6 +3356,7 @@ http://purl.obolibrary.org/obo/MICRO_0001531
 http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316
 http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank
 http://purl.obolibrary.org/obo/NCBITaxon_1
+http://purl.obolibrary.org/obo/NCBITaxon_1086030
 http://purl.obolibrary.org/obo/NCBITaxon_1110693
 http://purl.obolibrary.org/obo/NCBITaxon_1114957
 http://purl.obolibrary.org/obo/NCBITaxon_1211845
@@ -3371,6 +3372,7 @@ http://purl.obolibrary.org/obo/NCBITaxon_216597
 http://purl.obolibrary.org/obo/NCBITaxon_28901
 http://purl.obolibrary.org/obo/NCBITaxon_316385
 http://purl.obolibrary.org/obo/NCBITaxon_316407
+http://purl.obolibrary.org/obo/NCBITaxon_424718
 http://purl.obolibrary.org/obo/NCBITaxon_511145
 http://purl.obolibrary.org/obo/NCBITaxon_527799
 http://purl.obolibrary.org/obo/NCBITaxon_531853
@@ -3380,6 +3382,8 @@ http://purl.obolibrary.org/obo/NCBITaxon_562
 http://purl.obolibrary.org/obo/NCBITaxon_590
 http://purl.obolibrary.org/obo/NCBITaxon_59201
 http://purl.obolibrary.org/obo/NCBITaxon_595496
+http://purl.obolibrary.org/obo/NCBITaxon_620
+http://purl.obolibrary.org/obo/NCBITaxon_623
 http://purl.obolibrary.org/obo/NCBITaxon_679895
 http://purl.obolibrary.org/obo/NCBITaxon_83333
 http://purl.obolibrary.org/obo/NCBITaxon_90371
@@ -3391,6 +3395,7 @@ http://purl.obolibrary.org/obo/NCBITaxon_family
 http://purl.obolibrary.org/obo/NCBITaxon_genus
 http://purl.obolibrary.org/obo/NCBITaxon_order
 http://purl.obolibrary.org/obo/NCBITaxon_phylum
+http://purl.obolibrary.org/obo/NCBITaxon_serotype
 http://purl.obolibrary.org/obo/NCBITaxon_species
 http://purl.obolibrary.org/obo/NCBITaxon_strain
 http://purl.obolibrary.org/obo/NCBITaxon_subspecies
