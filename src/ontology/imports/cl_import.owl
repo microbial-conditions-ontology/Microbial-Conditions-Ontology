@@ -20,8 +20,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mco/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mco/releases/2022-06-22/imports/cl_import.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-22</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mco/releases/2022-06-28/imports/cl_import.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-28</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -395,6 +395,7 @@
     <!-- http://purl.obolibrary.org/obo/ubprop#_upper_level -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ubprop#_upper_level">
+        <rdfs:comment>abstract upper-level terms not directly useful for analysis</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
@@ -26312,6 +26313,24 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000064">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <obo:IAO_0000115>A cell that has a filiform extrusion of the cell surface.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>VHOG:0001532</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>XAO:0000031</oboInOwl:hasDbXref>
+        <rdfs:label>ciliated cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000064"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A cell that has a filiform extrusion of the cell surface.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000066 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000066">
@@ -26329,7 +26348,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FB:ma</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FB:ma</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D004847</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -26375,6 +26394,23 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell of the embryo.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:0618947256</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0010016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0010016">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000064"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000548"/>
+        <obo:IAO_0000115>A cell with a flagellum surrounded by a collar of microvilli. The motion of the flagellum draws water past the microvilli, serving either a feeding or sensory function. Collar cells are found in multiple animals, including sponges, echinoderms, and cnidarians. They are also found outside animals in the choanoflagellates. Although collar cells are superficially similar, their cytoskeletal structure and functional biology are different in different groups of organisms.</obo:IAO_0000115>
+        <rdfs:label>collar cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0010016"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A cell with a flagellum surrounded by a collar of microvilli. The motion of the flagellum draws water past the microvilli, serving either a feeding or sensory function. Collar cells are found in multiple animals, including sponges, echinoderms, and cnidarians. They are also found outside animals in the choanoflagellates. Although collar cells are superficially similar, their cytoskeletal structure and functional biology are different in different groups of organisms.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:25840473</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
