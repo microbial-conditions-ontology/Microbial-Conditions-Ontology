@@ -3357,6 +3357,7 @@ http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002316
 http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank
 http://purl.obolibrary.org/obo/NCBITaxon_1
 http://purl.obolibrary.org/obo/NCBITaxon_1110693
+http://purl.obolibrary.org/obo/NCBITaxon_1114957
 http://purl.obolibrary.org/obo/NCBITaxon_1211845
 http://purl.obolibrary.org/obo/NCBITaxon_1224
 http://purl.obolibrary.org/obo/NCBITaxon_1236
